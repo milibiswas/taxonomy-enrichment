@@ -43,5 +43,5 @@ Check the file  in
 
 ## Note:
 
-HLDA & Nethiex integration are under development.
+HLDA & Nethiex integration are under development.<br/>
 BBC, DBLP dataset integration are under development.
