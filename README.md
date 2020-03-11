@@ -33,6 +33,13 @@ Example:
 ### python run.py -d 'amazon_fashion' -n 0.001 -a "taxogen"
 
 
+## Visualize (Hypertree)
+
+Check the file  in 
+
+### ./src/code/hypertree/Visualisation/Fashion_vis.html
+
+
 
 ## Note:
 
