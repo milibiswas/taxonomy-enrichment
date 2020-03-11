@@ -26,11 +26,11 @@ This repository contains different algorithms that are used to build taxonomy fr
 2. Once the installation is compplete, run the below command to start the lgorithm
 
 
-python run.py -d < Name of the dataset > -n < Amount of data to be processed, values between 0 and 1 > -a < Name of the algorithm >
+### python run.py -d < Name of the dataset > -n < Amount of data to be processed, values between 0 and 1 > -a < Name of the algorithm >
 
 Example:
 
-python run.py -d 'amazon_fashion' -n 0.001 -a "taxogen"
+### python run.py -d 'amazon_fashion' -n 0.001 -a "taxogen"
 
 
 
