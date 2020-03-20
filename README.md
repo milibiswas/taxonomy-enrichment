@@ -36,9 +36,12 @@ ___
 
 ___
 
-1. First install the required packages by running setup.py
+## Execution
 
-2. Once the installation is compplete, run the below command to start the lgorithm
+
+```
+    $ python run.py [arguments]
+```
 
 
 ### python run.py -d < Name of the dataset > -n < Amount of data to be processed, values between 0 and 1 > -a < Name of the algorithm >
