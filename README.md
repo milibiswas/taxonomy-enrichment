@@ -46,21 +46,21 @@ ___
 ```
 
 ### Dataset
-
+```
 - Amazon Fashion Review
 - BBC news
 - DBLP network
 - 20Newsgroup
-
+```
 ### Algorithms
-
+```
 - Taxogen : Unsupervised way to build taxonomy
 - HLDA : Hierarchical Latent Dirichlet Allocation
 - Taxogen with no local embedding
 - Taxogen with no adaptive clustering
 - HCLUS : Hierarchical Clustering
 - Nethiex : Taxonomy building based on chinese resturant process
-
+```
 ## Note:
 
 HLDA & Nethiex integration are under development.<br/>
