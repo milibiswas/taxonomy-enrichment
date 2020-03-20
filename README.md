@@ -38,18 +38,21 @@ ___
 
 ## Execution
 
+- For execution, trigger the run python script from root folder
 
 ```
     $ python run.py [arguments]
 ```
 
 
-### python run.py -d < Name of the dataset > -n < Amount of data to be processed, values between 0 and 1 > -a < Name of the algorithm >
+### Execution examples
 
-Example:
+- Run algorithm (taxogen) on a dataset (amazon_fashion) using one 10% data volume
 
-### python run.py -d 'amazon_fashion' -n 0.001 -a "taxogen"
+```
+    $ python run.py -d 'amazon_fashion' -a "taxogen" -n 0.001
 
+```
 
 ## Visualize (Hypertree)
 
