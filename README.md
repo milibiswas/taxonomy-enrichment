@@ -1,24 +1,6 @@
 # taxonomy-build-algorithm
 This repository contains different algorithms that are used to build taxonomy from different text corpus.
 
-## Dataset used :
-
-1. Amazon Fashion Review
-2. BBC news data
-3. DBLP network data
-
-## Algorithms used:
-
-1. Taxogen : Unsupervised way to build taxonomy
-2. HLDA : Hierarchical Latent Dirichlet Allocation
-3. Taxogen with no local embedding
-4. Taxogen with no adaptive clustering
-5. HCLUS : Hierarchical Clustering
-6. Nethiex : Taxonomy building based on chinese resturant process
-
-           
-
-
 ## Prerequisites and dependencies
 
 - Python 3.0 or higher
@@ -44,23 +26,40 @@ ___
     $ python run.py [arguments]
 ```
 
+___
 
 ### Execution examples
 
 - Run algorithm (taxogen) on a dataset (amazon_fashion) using one 10% data volume
 
 ```
-    $ python run.py -d 'amazon_fashion' -a "taxogen" -n 0.001
+    $ python run.py -d 'amazon_fashion' -a "taxogen" -n 0.1
 
 ```
 
 ## Visualize (Hypertree)
 
-Check the file  in 
+- Check the file the following path 
 
-### ./src/code/hypertree/Visualisation/Fashion_vis.html
+```
+    ./src/code/hypertree/Visualisation/Fashion_vis.html
+```
 
+### Dataset
 
+- Amazon Fashion Review
+- BBC news
+- DBLP network
+- 20Newsgroup
+
+### Algorithms
+
+- Taxogen : Unsupervised way to build taxonomy
+- HLDA : Hierarchical Latent Dirichlet Allocation
+- Taxogen with no local embedding
+- Taxogen with no adaptive clustering
+- HCLUS : Hierarchical Clustering
+- Nethiex : Taxonomy building based on chinese resturant process
 
 ## Note:
 
