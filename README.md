@@ -19,7 +19,22 @@ This repository contains different algorithms that are used to build taxonomy fr
            
 
 
-## Steps to run the program
+## Prerequisites and dependencies
+
+- Python 3.0 or higher
+- Clone this repository.
+- All the additional dependencies will be installed using the build script.
+
+___
+
+## Build
+
+- Install all the dependent packages and modules using the setup script located in the root folder:
+```
+    $ python setup.py
+```
+
+___
 
 1. First install the required packages by running setup.py
 
