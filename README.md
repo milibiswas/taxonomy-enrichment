@@ -30,7 +30,7 @@ ___
 
 ### Execution examples
 
-- Run algorithm (taxogen) on a dataset (amazon_fashion) using one 10% data volume
+- Run algorithm (taxogen) on a dataset (amazon_fashion) using 10% of total data volume
 
 ```
     $ python run.py -d 'amazon_fashion' -a "taxogen" -n 0.1
