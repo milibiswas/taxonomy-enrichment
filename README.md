@@ -26,7 +26,16 @@ ___
     $ python run.py [arguments]
 ```
 
-___
+- Command-line arguments for the program:
+
+ | -a (Algorithm) | -d (Dataset) |  -n (Data Volume ratio to be used)
+ | -------- | -------- | -------- |
+ | taxogen    | amazon_fashion  | (0,1] |
+ | hlda       | bbc             |  |
+ | nethiex    | dblp            |  |
+ | nole       | 20newsgroup     |  |
+ | noac       |                 |  |
+
 
 ### Execution examples
 
