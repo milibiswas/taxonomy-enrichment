@@ -12,6 +12,7 @@
 #---------------------------------
 # Import required python modules
 #---------------------------------
+from lxml import etree as ElementTree
 from contextlib import redirect_stdout
 import sys
 from zipfile import ZipFile
@@ -22,7 +23,7 @@ import re
 import collections
 import pickle
 import urllib.request
-import xml.etree.ElementTree
+#import xml.etree.ElementTree
 
 import pandas as pd
 import numpy as np
@@ -99,6 +100,8 @@ class Data(object):
         #self.stopWord = self.buildStopWords(en_stop)
         self.most_commonn_word = None
         
+        self.targetLabel=None
+        
         
         # Methods in init()       
         try:
@@ -117,40 +120,46 @@ class Data(object):
         downloadFile=filePath+fileName
         # =============================================================================
         
-        print('Beginning file download')
+        print('[Info]: Beginning file download')
             
         # =============================================================================
         #url = 'http://deepyeti.ucsd.edu/jianmo/amazon/categoryFilesSmall/AMAZON_FASHION_5.json.gz'
         urllib.request.urlretrieve(url,downloadFile)
         # =============================================================================
+        print('[Info]: File download completed successfully')
         return fileName
     
     @staticmethod
     def readXML(xmlPath):
         
-        categoryList=[  'BIBM'
-                        'RECOMB'
-                        'INFOCOM'
-                        'SIGCOMM'
-                        'SC'
-                        'ISCA'
-                        'EUROCRYPT'
-                        'CRYPTO'
-                        'DCC'
-                        'CVPR'
-                        'ICCV'
-                        'ACL'
+        categoryList=[  'BIBM',
+                        'RECOMB',
+                        'INFOCOM',
+                        'SIGCOMM',
+                        'SC',
+                        'ISCA',
+                        'EUROCRYPT',
+                        'CRYPTO',
+                        'DCC',
+                        'CVPR',
+                        'ICCV',
+                        'ACL',
                         'COLING'
                         ]
-        
-        root = xml.etree.ElementTree.parse(xmlPath).getroot()
+        parser=ElementTree.XMLParser(dtd_validation=True)
+        #root = xml.etree.ElementTree.parse(xmlPath).getroot()
+        root = ElementTree.parse(xmlPath, parser).getroot()
         articles = []
         for category in categoryList:
             cnt = 0
             for paper in root.iter('inproceedings'):
                 booktitle = next(paper.iter('booktitle')).text
+                
                 year = int(next(paper.iter('year')).text)
-                if booktitle == category and year <= 2016:
+
+                # TODO -- the year & book category can be made parameterized
+                
+                if booktitle == category and year <= 2016:   
                     articles.append(paper)
                     cnt += 1
         return articles
@@ -213,7 +222,7 @@ class Data(object):
     
     def __processGroundTruth(self,):
         if not self.groundTruth:
-            print('[Info] Ground Truth not provided')
+            print('[Warning]: Ground Truth not provided')
         else:
             if self.fileExist(self.groundTruth):
                 gtDataList=[]
@@ -407,7 +416,7 @@ class Data(object):
                 Data.keywordExtraction(self.outputData,self.inputKeyFile,10)
                 self.processKeyWords()
             except  CustomErrorForKeyWords:
-                print('Error: Keywords process error')
+                print('[Error]: Keywords process error')
                 sys.exit(1)
     
     def processData(self,):
@@ -420,16 +429,18 @@ class Data(object):
         try:
             if self.fileExist(self.inputFile):
                 self.__setOutputData(self.inputFile)
-                return None
+                
             else:
                 # Download the file and create the text file
                 self.processDownloadedCorpus(
                             self.downloadData(self.tempPath,self.url[self.dataSetName])
                             )
-                self.processData()  
+                self.processData() 
+                
+            return None
                 
         except  CustomErrorForCorpus:
-            print('Error: Preprocessing data')
+            print('[Error]: Preprocessing data')
             
     def processDownloadedCorpus(self,downloadFile):
         
@@ -454,21 +465,35 @@ class Data(object):
                
                with open(self.inputFile,'w') as fin:
                    for review in bbcData['data']:
-                       fin.write(review.strip('\n'))
+                       tmp=''
+                       lines = review.split("\n")
+                       non_empty_lines = [line for line in lines if line.strip() != ""]
+                       for s in non_empty_lines:
+                           if s.strip('\n'):
+                               tmp=tmp+s.strip('\n')+' '
+                       fin.write(tmp)
                        fin.write('\n')
+               
+                
+               # Keeping the target label. This is numpy array
+               with open(os.path.join(self.tempPath,'bbc_target_label.pkl'),'wb') as fout:
+                    pickle.dump(list(bbcData['target']),fout)
+                               
             return None
         
         elif self.dataSetName=='dblp':
             #TODO
-            
-            xmlGzip = gzip.GzipFile(os.path.join(self.tempPath,downloadFile), 'rb',encoding='utf-8')
+            print('[Info]: Unzipping the file started')
+            xmlGzip = gzip.GzipFile(os.path.join(self.tempPath,downloadFile), 'rb')
             xmlReadObj = xmlGzip.read()
             xmlGzip.close()
             
-            output = open(os.path.join(self.tempPath,"dblp.xml"), 'wb',encoding='utf-8')
+            output = open(os.path.join(self.tempPath,"dblp.xml"), 'wb')
             output.write(xmlReadObj)
             output.close()
+            print('[Info]: Unzipping the file completed')
             
+            print('[Info]: Creating papers.txt file started')
             xmlFile=os.path.join(self.tempPath,"dblp.xml")
             topics = {}
             for paper in Data.readXML(xmlFile):
@@ -476,15 +501,25 @@ class Data(object):
                 key = next(paper.iter('booktitle')).text
                 if key not in topics:
                     topics[key] = []
-                    topics[key].append(tl)
+                topics[key].append(tl)
                     
             with open(self.inputFile,'w') as fin:
-                   for key,val in topics:
+                   for key,val in topics.items():
                        for title in val:
-                           fin.write(title.strip('\n'))
-                           fin.write(' ')
+                           if title:
+                               fin.write(title.strip('\n'))
+                               fin.write(' ')
                        fin.write('\n')
+            
+            print('[Info]: Creating papers.txt file completed')
+            
+            # Keeping the target label. This is numpy array 
+            with open(os.path.join(self.tempPath,'dblp_target_label.pkl'),'wb') as fout:
+                    pickle.dump(list(topics.keys()),fout)
+            
             return None
+          
+        
         elif self.dataSetName=='20newsgroup':
             #TODO
             return None
@@ -552,14 +587,30 @@ class Data(object):
             
             reviewSeries.to_pickle(os.path.join(self.tempPath,pickleDataFileName))
             
-        if self.volume:
+        if self.volume != 1.0:
             upperLimit=reviewSeries.count()
             lowerLimit=int(upperLimit*self.volume)
             index=np.random.choice(upperLimit, lowerLimit,replace=False)
             modReviewSeries=reviewSeries.loc[ index ]
             self.outputProcessedCorpus=list(modReviewSeries)
             self.wordTokenization(self.outputProcessedCorpus)
-        #self.compute_tfidf(self.outputCorpusTokenized)
-        #self.freq_dist()
+            
+            if self.dataSetName in ('dblp','bbc'):
+                with open(os.path.join(self.tempPath,self.dataSetName+'_target_label.pkl'),'rb') as fin:
+                    label=np.array(pickle.load(fin))
+                
+                with open(os.path.join(self.tempPath,self.dataSetName+'_target_label_modified.pkl'),'wb') as fout:
+                    pickle.dump(list(label),fout)
+            
+        else:
+            self.outputProcessedCorpus=list(reviewSeries)
+            self.wordTokenization(self.outputProcessedCorpus)
+            if self.dataSetName in ('dblp','bbc'):
+                with open(os.path.join(self.tempPath,self.dataSetName+'_target_label.pkl'),'rb') as fin:
+                    label=np.array(pickle.load(fin))
+                    
+                with open(os.path.join(self.tempPath,self.dataSetName+'_target_label_modified.pkl'),'wb') as fout:
+                    pickle.dump(list(label),fout)
+        
         self.__processGroundTruth()
-        print('[Info]: Data is prepared')
+        print('[Info]: Data preprocess and cleaning is complete')

@@ -17,6 +17,24 @@ import tomotopy as tp
 import json
 import sys
 
+def createJavaScriptFile(path,dataDict):
+        try:
+            if dataDict==None:
+                raise Exception
+            else:
+                with open(path,'w') as fout:
+                    fout.write('function json_data() {')
+                    fout.write('\n')
+                    fout.write('var x = ')
+                    json.dump(dataDict,fout)
+                    fout.write(';')
+                    fout.write('return x; }')
+                print('Jason file created at :',path)
+        except Exception as err:
+            print('Error occurred')
+            print(str(err))
+            sys.exit(1)
+
 def getTopicWords(topic_id,n_top_words=10):
   '''
       This is a wrapper function on get_topic_words() from tomotopy
@@ -36,9 +54,10 @@ def topicTaxonomy(model,rootTopicId=0):
     
   if mdl.is_live_topic(rootTopicId) and wordList:
     myDict={}
-    myDict['topic_id']=rootTopicId
-    myDict['name']=wordList
+    myDict['id']=rootTopicId
+    myDict['name']=wordList[0]
     myDict['children']=[]
+    myDict['data'] = {'type':'concept','depth':rootTopicId}
 
     if len(model.children_topics(rootTopicId))>0:
       for child in model.children_topics(rootTopicId):
@@ -78,7 +97,7 @@ if __name__ == '__main__':
     # training the model
     # =============================================================================
     
-    for i in range(0, 100, 50):  # TODO : The values can be parametrized is needed
+    for i in range(0, 100, 50):  # TODO : The values can be parametrized if needed
         mdl.train(10)
         print('Iteration: {}\tLog-likelihood: {}'.format(i, mdl.ll_per_word))
     
@@ -102,5 +121,5 @@ if __name__ == '__main__':
     #  Generating the JSON file
     # =============================================================================
     
-    with open(jsonFilePath,'w') as fout:
-        json.dump(dataDict,fout)
+    createJavaScriptFile(jsonFilePath,dataDict)
+    

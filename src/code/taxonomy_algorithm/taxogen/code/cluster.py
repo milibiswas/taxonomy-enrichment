@@ -31,10 +31,10 @@ class Clusterer:
         self.clus.fit(self.data)
         #labels = self.clus.labels_
         self.old2new_clusterid=self.old2new_clusteridx() # Change by Mili
-        print('old label',self.clus.labels_)
+        #print('old label',self.clus.labels_)
         labels=self.get_new_label(self.clus.labels_)
         self.clus.labels_=labels
-        print('new label',labels)
+        #print('new label',labels)
         for idx, label in enumerate(labels):
             self.clusters[label].append(idx)
         self.membership = labels

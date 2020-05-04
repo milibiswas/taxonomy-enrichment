@@ -12,7 +12,7 @@
 #
 #       Parameters:
 #               1 => corpus name (e.g. amazon_review, zalando, etc)
-#               2 => taxonomy algorithm name (taxogen, hlda, hpam, nethiex, nole,noac,hclus)
+#               2 => taxonomy algorithm name (taxogen, hlda, hpam, ncrp, nole,noac,hclus)
 #               3 => % of data to be processed (values between 0-1, 1 being 100%)
 #               4 => data flush indicator (y being yes, n being no)
 #
@@ -41,27 +41,40 @@ def main(param1,param2,param3):
             
     
     if param1 == 'amazon_fashion':
-        gt='./src/data/input/ground_truth/amazon_fashion_ground_truth.txt'
-        data=dc.Data(param1,param3,gt)
+        groundTruth='./src/data/input/ground_truth/amazon_fashion_ground_truth.txt'
+        maxLevel=3
+        clusterInfo=[3,
+                     5,0,0,0,0,0,
+                     5,0,0,0,0,0,
+                     5,0,0,0,0,0,
+                     ]
+        data=dc.Data(param1,param3,groundTruth)
         data.prepare()
     elif param1 == 'zalando_fashion':
         data=dc.Data(param1,param3)
         data.prepare()
     elif param1 == 'bbc':
-        sys.exit('Under development')
+        maxLevel=2
+        clusterInfo=[2,
+                       2,
+                         1,
+                       1,
+                         1]
         data=dc.Data(param1,param3)
         data.prepare()
     elif param1 == 'dblp':
-        sys.exit('Under development')
-        data=dc.Data(param1,param3)
-        data.prepare()
+         maxLevel=1
+         clusterInfo=[7,0,0,0,0,0,0,0
+                     ]
+         data=dc.Data(param1,param3)
+         data.prepare()
     elif param1 == '20newsgroup':
         sys.exit('Under development')
         data=dc.Data(param1,param3)
         data.prepare()
     else:
-        print('The dataset name {} is not recognized'.format(param1))
-        print('The valid dataset names are {} , {} , {} , {} , {}'.format('amazon_fashion', 'zalando_fashion', 'bbc', 
+        print('[Error]: The dataset name {} is not recognized'.format(param1))
+        print('[Info]: The valid dataset names are {} , {} , {} , {} , {}'.format('amazon_fashion', 'zalando_fashion', 'bbc', 
               'dblp', '20newsgroup'))
         sys.exit(1)
         
@@ -72,8 +85,15 @@ def main(param1,param2,param3):
     #  Input word embeddings generation (w2v) 
     # ========================================
     
+    print('[Info]: Running FastText for getting initial set of embeddings')
     model=ft.FastText(corpus=data.outputCorpusTokenized,window=5,min_count=5,iter=5,sample=1e-4)
     model.train()
+    
+    # Model is saved to be used during incremental process
+    # Model saved file name is as param1.model where param1 = 'dblp' or 'amazon_review' etc.
+    
+    model.save('./src/data/output/'+param1+'.model')
+    print('[Info]: Model is saved as ','./src/data/output/'+param1+'.model')
     
     # ========================================
     #  Keywords & Corpus generation
@@ -82,7 +102,7 @@ def main(param1,param2,param3):
     model.saveWordEmbeddings(path=os.path.join(tmpFilePath,'embeddings.txt'),keywordList=set(data.outputKeys))
     model.savekeywords(path=os.path.join(tmpFilePath,'keywords.txt'),keywordList=set(data.outputKeys))
     model.saveCorpus(path=os.path.join(tmpFilePath,'papers.txt'))
-    print('Files are saved at :',tmpFilePath)
+    print('[Info]: Files are saved at ',tmpFilePath)
     
     
     # ========================================
@@ -93,42 +113,64 @@ def main(param1,param2,param3):
     def runTaxonomyAlgoritm(algoname, tmpAbsolutePath,percentData):
         corpusName=param1+'_'+str(percentData)
         if algoname in ['taxogen','taxogen_nole','taxogen_noac','hclus']:
+            print('[Info]: Running {} algoritm'.format(algoname))
             os.chdir('./src/code/taxonomy_algorithm/'+algoname+'/code/')
-            subprocess.call(["./run.sh", 
-                               tmpAbsolutePath,"../data/", corpusName])
+            print('[Info]: Calling the subprocess run.sh')
+            subprocess.call([  
+                               './run.sh', 
+                               tmpAbsolutePath,
+                               '../data/',
+                               corpusName,
+                               str(clusterInfo),
+                               str(maxLevel)
+                             ])
     
             #=================================================
             #  Tree generation (JSON) for Hypertree Visualtion
             #=================================================
-    
+           
+            print('[Info]: Calling json builder for generating JSON file')
+            
             visObj=jb.JsonBuild()
             visObj.process('../data/'+corpusName+"/our-l3-0.15")
             os.chdir(dname)    
             visObj.createJavaScriptFile(path='./src/code/hypertree/Visualisation'+'/json_data.js')
-            
             data.setJsonData(visObj.dataDict)
             
-            print('The algorithm {} is completed successfully'.format(algoname))
+            print('[Info]: The algorithm {} is completed successfully'.format(algoname))
             
         
         elif algoname in ['hlda','hpam']:
-            sys.exit('Under development')
-            print('running hlda algoritm')
+            print('[Info]: Running hlda algoritm')
             os.chdir('./src/code/taxonomy_algorithm/'+algoname)
-            subprocess.call(["python3","./hlda.py",tmpAbsolutePath+'/papers.txt',tmpAbsolutePath+'/keywords.txt',"2",
-                             './../../hypertree/Visualisation'+'/json_data.js'])
+            subprocess.call([
+                               "python3",
+                               "./hlda.py",
+                               tmpAbsolutePath+'/papers.txt',
+                               tmpAbsolutePath+'/keywords.txt',
+                               "2",
+                               './../../hypertree/Visualisation'+'/json_data.js'
+                             ])
             os.chdir(dname)
             
-        elif algoname == 'nethiex':
-            sys.exit('Under development')
-            print('running nethiex algoritm')
+        elif algoname == 'ncrp':
+            print('==========================================================================')
+            print('[Info]: Running Chinese Restaurant Process (nCRP) algoritm')
             os.chdir('./src/code/taxonomy_algorithm/'+algoname)
-            subprocess.call(["python3","./generate_taxonomy.py"])
+            subprocess.call([
+                              "python3",
+                              "./generate_taxonomy.py",
+                              tmpAbsolutePath,
+                              param1,
+                              str(clusterInfo),
+                              str(maxLevel),
+                              './../../hypertree/Visualisation/json_data.js'
+                            ])
             os.chdir(dname)
-            print('The algorithm {} is completed successfully'.format(algoname))
+            print('[Info]: The algorithm {} is completed successfully'.format(algoname))
             
         else:
-            print('The algorithm {} is not included or recognized'.format(algoname))
+            print('[Warning]: The algorithm {} is not included or recognized'.format(algoname))
             sys.exit(1)
     
     # ===============================================
@@ -148,17 +190,20 @@ def main(param1,param2,param3):
             eval_obj= ev.Evaluation(data.gtDataList,data.jsonDict)
             eval_obj.process()
             nmi_score=ev.Evaluation.measureNMI(eval_obj.gtList,eval_obj.pathList, data.keywords2label)
+            #print(ev.Evaluation.measureF1Score())
             print(nmi_score)
         except Exception as err:
-            print('[Error] okXXX:',str(err))
+            print('[Error]: '+str(err))
     else:
-        print('[Info]: Ground truth is not evailable, hence evaluation does not run')
+        print('[Warning]: Ground truth was not evailable, so evaluation did not run')
     
     
 if __name__=='__main__':
     
     try:
-        print('Starting the program -')
+        print('------------------------------------------------------')
+        print('                Starting the program....              ')
+        print('------------------------------------------------------')
         argv=sys.argv[1:]
         opts, args = getopt.getopt(argv, 'd:a:n:h', ['dataset_name=','algorithm_name=','percent_of_data=','help'])
         

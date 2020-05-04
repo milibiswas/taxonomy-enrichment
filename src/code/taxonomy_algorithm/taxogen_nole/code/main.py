@@ -14,14 +14,10 @@ from shutil import copyfile
 from distutils.dir_util import copy_tree
 from os import symlink
 import sys
+import ast
 
 PYTHONHASHSEED=0
 
-MAX_LEVEL = 1
-clusterInfo=[3,
-              0,
-              0,
-              0]
 '''clusterInfo=[3,  # General
              2,  # Shoe (oxford Shoe, sock)
              2,  # oxford Shoe
@@ -283,6 +279,8 @@ def main(opt):
 if __name__ == '__main__':
     
     dir_path=sys.argv[1]
+    clusterInfo=ast.literal_eval(sys.argv[2])
+    MAX_LEVEL=int(sys.argv[3])
     # opt = load_toy_params()
     # opt = load_dblp_params()
     # opt = load_sp_params()

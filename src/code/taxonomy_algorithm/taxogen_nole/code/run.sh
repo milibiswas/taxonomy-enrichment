@@ -5,6 +5,7 @@
 #                $1 => Name of the input path (papers.txt, keywords.txt)
 #                $2 => Name of the output path (where taxonomy and others will be created)
 #                $3 => Name of the corpus (e.g. DBLP, AMAZON_REVIEW, NEWS_GROUP_20, BBC etc)
+#                $4 => Clustering Information
 #
 
 ## Name of the input directory from where three input files will be read
@@ -20,6 +21,12 @@ export outputPath
 
 corpusName=${3}
 export corpusName
+
+clusterInfo=${4}
+export clusterInfo
+
+maxLevel=${5}
+export maxLevel
 
 if [ -d "$inputPath" ]; then
 # Take action if $inputPath exists. #
@@ -129,8 +136,8 @@ if [ -d "${outputPath}/${corpusName}/our-l3-0.15" ]; then
     rm -Rf ${outputPath}/${corpusName}/our-l3-0.15/*
 fi
 
-echo 'Start TaxonGen'
-python3 main.py ${outputPath}/${corpusName}/
+echo '[Info]: Running TaxonGen algorithm'
+python3 main.py ${outputPath}/${corpusName}/ "${clusterInfo}" ${maxLevel}
 
 echo 'Generate compressed taxonomy'
 if [ ! -d ${outputPath}/${corpusName}/taxonomies ]; then

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # =======================================================================================================
 # 
-#       Name : eval.py
+#       Name : evaluate.py
 #       Description: To run the evaluation
 #       Created by : Mili Biswas
 #       Created on: 27.02.2020
@@ -13,14 +13,17 @@
 #       Parameters:
 #
 # ========================================================================================================
-
+import numpy as np
 import pandas as pd
-from sklearn.metrics.cluster import v_measure_score
 import random
 import string
 import statistics
 import json
 import operator
+
+from sklearn.metrics.cluster import v_measure_score
+from sklearn.metrics import f1_score
+from sklearn.metrics import davies_bouldin_score
 
 class Evaluation(object):
     def __init__(self,gtList,dataDict):
@@ -42,7 +45,6 @@ class Evaluation(object):
 #             return False
 # =============================================================================
         
-#=============================================================================
     def __rootToLeafPath(self,inputTree,nameStr=''):
          '''
              This function will produce a list of lists
@@ -61,7 +63,7 @@ class Evaluation(object):
              self.pathList.append(nameStr.split('#'))
          
          return None        
-#=============================================================================
+
          
     def process(self,):
         try:
@@ -69,11 +71,7 @@ class Evaluation(object):
         except Exception as err:
             print('[Error]: process() method in Evaluation class instance:')
             print('[Error]: ',str(err))
-         
-        
-# =======================================
-#      NMI - Calculation   
-# =======================================
+
         
     @staticmethod 
     def randomString(stringLength=5):
@@ -132,14 +130,21 @@ class Evaluation(object):
     
     @staticmethod     
     def measureNMI(groundTruth, actualResult,keywords2label):
+        
+            '''
+                Algorithm to calculate the NMI score using ground truth & actual result
             
+            '''
+            f1_score={}
             nmi_score={}
             gtDataFrame=pd.DataFrame(groundTruth)
             arDataFrame=pd.DataFrame(actualResult)
-            upperLimit=Evaluation.getMaxLength(actualResult)
+            
+            # This is giving the maximum lenth of the list from list of lists
+            upperLimit=Evaluation.getMaxLength(actualResult)   
             
             for level in range(0,upperLimit):
-                for i in list(arDataFrame[level].unique()):
+                for i in list(arDataFrame[level].unique()):    # e.g. Fashion in level 0 etc.
                     # Here get the category value from actual result tree
                     nmi_ar=[]
                     scoreIndex={}
@@ -148,7 +153,7 @@ class Evaluation(object):
                     for l in actualResult:
                         if len(l)-1>level:
                             if l[level]==i:
-                                nmi_ar.append(l[-1])
+                                nmi_ar.append(l[-1])   # Keeping the labels for each cluster
                     
                     # Here for each value of actual category, get all possible categories from same level in ground truth
                     cnt=0
@@ -174,24 +179,57 @@ class Evaluation(object):
                         ar,gt = Evaluation.harmonizedActualResults(nmi_ar,max_nmi_gt,keywords2label)
                         
                         score=v_measure_score(ar,gt)
+                        f1score=Evaluation.measureF1Score(gt,ar)
                         if level not in nmi_score:
                             nmi_score[level]=[]
                         if nmi_ar:
                             nmi_score[level].append(score)
+                            
+                        if level not in f1_score:
+                            f1_score[level]=[]
+                        if nmi_ar:
+                            f1_score[level].append(f1score)
                         
-            tmp={}
+                        
+            finalNMI={}
             for key,val in nmi_score.items():
-                tmp[key]=statistics.mean(val)
-                
-            return tmp
-
-
-    
-# =======================================
-#      Performance of 
-#      Clustering (Davies Bouldin Index)
-# =======================================
+                finalNMI[key]=statistics.mean(val)
+            
+            finalF1Score={}
+            fmicro=[]
+            fmacro=[]
+            fweight=[]
+            
+            for key,val in f1_score.items():
+                fmic=[]
+                fmac=[]
+                fwgh=[]
+                for d in val:
+                    fmic.append(d['micro'])
+                    fmac.append(d['macro'])
+                    fwgh.append(d['weighted'])
+                fmicro.append(statistics.mean(fmic))
+                fmacro.append(statistics.mean(fmac))
+                fweight.append(statistics.mean(fwgh))
+            if fmicro:
+                finalF1Score['micro']=statistics.mean(fmicro)
+                print(finalF1Score['micro'])
+            if fmacro:
+                finalF1Score['macro']=statistics.mean(fmacro)
+                print(finalF1Score['macro'])
+            if fweight:
+                finalF1Score['weighted']=statistics.mean(fweight)
+                print(finalF1Score['weighted'])
+            
+            return (finalNMI,finalF1Score)
         
     @staticmethod
-    def measureDBI():
-        pass
+    def measureDBI(inputData,inputLabel):
+        return davies_bouldin_score(inputData,inputLabel)
+    
+    @staticmethod
+    def measureF1Score(yTrue=None,yPred=None):
+        f1Macro=f1_score(yTrue, yPred, average='macro',labels=np.unique(yPred))
+        f1Micro=f1_score(yTrue, yPred, average='micro',labels=np.unique(yPred))
+        f1Weighted=f1_score(yTrue, yPred, average='weighted',labels=np.unique(yPred))
+        return {'macro':f1Macro,'micro':f1Micro,'weighted':f1Weighted}    

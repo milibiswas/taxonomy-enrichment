@@ -4,10 +4,12 @@ __description__: Construct Full dataset and sub dataset objects.
   Currently, the document hard clustering is written in the file
 __latest_updates__: 09/25/2017
 '''
+import os
 import numpy as np
 from collections import defaultdict
 from math import log
 from utils import ensure_directory_exist
+
 
 # the complete data set
 class DataSet:
@@ -131,7 +133,7 @@ class SubDataSet:
             keyword_idf[w] = log(1.0 + N / keyword_idf[w])
         return keyword_idf
 
-    # output_file: one integrated file;
+    # output_file: one integrated file
     def write_cluster_members(self, clus, cluster_file, parent_dir):
         n_cluster = clus.n_cluster
         clusters = clus.clusters  # a dict: cluster id -> keywords
@@ -159,17 +161,26 @@ class SubDataSet:
         clus_centers.sort()#change by mili
         print('from hierarchy file',clus_centers)
         center_names = []
+        dir_name=os.path.dirname(output_file)
         with open(output_file, 'w') as fout:
             for cluster_id, keyword_idx in clus_centers:
                 keyword = self.keywords[keyword_idx]
                 center_names.append(keyword)
                 fout.write(keyword + ' ' + parent_description + '\n')
+        with open(os.path.join(dir_name,'embedding_data.txt'),'w') as fout:
+            for cluster_id, keyword_idx in clus_centers:
+                vec=list(clus.clus.cluster_centers_[cluster_id])
+                keyword = self.keywords[keyword_idx]
+                fout.write(keyword)
+                for e in vec:
+                    fout.write(' '+str(e))
+                fout.write('\n')
         return center_names
 
 
     def write_document_membership(self, clus, output_file, parent_dir):
         n_cluster = clus.n_cluster
-        keyword_membership = clus.membership  # an array containing the membership of the keywords
+        keyword_membership = clus.membership      # an array containing the membership of the keywords
         cluster_document_map = defaultdict(list)  # key: cluster id, value: document list
         with open(output_file, 'w') as fout:
             for idx, doc in zip(self.original_doc_ids, self.documents):

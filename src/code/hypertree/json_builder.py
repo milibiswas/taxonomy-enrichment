@@ -5,7 +5,7 @@ Created on Sun Feb 16 16:31:21 2020
 
 @author: milibiswas
 """
-
+import numpy as np
 import sys
 #import re
 import os
@@ -30,7 +30,7 @@ class JsonBuild(object):
                     json.dump(self.dataDict,fout)
                     fout.write(';')
                     fout.write('return x; }')
-                print('Jason file created at :',path)
+                print('[Info]: Jason file created at :',path)
         except Exception as err:
             print('Error occurred')
             print(str(err))
@@ -106,13 +106,14 @@ class JsonBuild(object):
             
         return ' & '.join(list(set(nodeNamesList)))
     
-    def jsonBuilder(self,inputDir=None,parent='Fashion',level=1):
+    def jsonBuilder(self,inputDir=None,parent='*',level=1,parentVec=None):
     
         dataDict={}
-        if parent=='Fashion':
+        if parent=='*':
             pass
         else:
-            parent=self.__nodeRenameAlgorithm(os.path.join(inputDir,'seed_keywords.txt'))
+            #parent=self.__nodeRenameAlgorithm(os.path.join(inputDir,'seed_keywords.txt'))
+            pass
         
         '''
             1. Read parent/root directory
@@ -133,9 +134,10 @@ class JsonBuild(object):
                 for line in fin:
                     child,parent1=line.strip().split()
                     children.append(child)
-                    #parent=parent
+                    parent=parent
             dataDict['id']=parent        
             dataDict['name']=parent
+            dataDict['center']=parentVec
             dataDict['children']=[]
             
             # Other than root level, we need data element
@@ -147,13 +149,22 @@ class JsonBuild(object):
                 dataDict['description']="Root Level"
                 
             for child in children:
-                ret=self.jsonBuilder(os.path.join(inputDir,child),child,level+1)
+                pVec=None
+                with open(os.path.join(inputDir,'embedding_data.txt'),'r') as f:
+                    for key,line in enumerate(f):
+                        l=line.strip('\n').split(' ')
+                        if l[0].strip() == child.strip():
+                            pVec=list(np.array(l[1:],dtype=float))
+                        else:
+                            continue
+                ret=self.jsonBuilder(os.path.join(inputDir,child),child,level+1,pVec)
                 dataDict['children'].append(ret)                
             return dataDict
         else:
             try:
                 dataDict['id']=parent        
                 dataDict['name']=parent
+                dataDict['center']=parentVec
                 dataDict["data"]={"type":"concept","depth":level}
                 leaf_nodes=[]
                 with open(os.path.join(inputDir,'seed_keywords.txt'),'r') as fin:
@@ -162,19 +173,20 @@ class JsonBuild(object):
                         leaf_dict["id"]=line.strip()
                         leaf_dict["data"]={"type":"concept","depth":level}
                         leaf_dict["name"]=line.strip()
+                        leaf_dict['center']=None
                         leaf_dict["children"]=[]
                         leaf_nodes.append(leaf_dict)
                 dataDict['children']=leaf_nodes
                 return dataDict
             except Exception as err:
-                print('[Error]:',str(err))
+                print('[Error]:'+ str(err))
                 return
             
-    def process(self,path,parent='Fashion',level=1):
+    def process(self,path,parent='*',level=1):
         try:
             self.dataDict=self.jsonBuilder(path,parent,level)
             self.__rootToLeafPath(self.dataDict)            
         except Exception as err:
-            print('Error in json file generation - check the errors for details')
+            print('[Error] Error in json file generation - check the logs for details')
             print(str(err))
             sys.exit(1)

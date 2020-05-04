@@ -14,19 +14,22 @@ from shutil import copyfile
 from distutils.dir_util import copy_tree
 from os import symlink
 import sys
+import ast
 
 PYTHONHASHSEED=0
 
-MAX_LEVEL = 3
+#MAX_LEVEL = 3
 
-clusterInfo=[3,
-              5,0,0,0,0,0,
-              5,0,0,0,0,0,
-              5,0,0,0,0,0,
-              ]
+# =============================================================================
+# clusterInfo=[3,
+#               5,0,0,0,0,0,
+#               5,0,0,0,0,0,
+#               5,0,0,0,0,0,
+#               ]
+# =============================================================================
 
 
-print(clusterInfo)
+#print(clusterInfo)
 '''clusterInfo=[3,  # General
              2,  # Shoe (oxford Shoe, sock)
              2,  # oxford Shoe
@@ -157,6 +160,7 @@ print(clusterInfo)
                                                                            
 
 class DataFiles:
+    
     def __init__(self, input_dir, node_dir):
         self.doc_file = input_dir + 'papers.txt'
         self.link_file = input_dir + 'keyword_cnt.txt'
@@ -174,15 +178,15 @@ class DataFiles:
         self.filtered_keyword_file = node_dir + 'keywords.txt'
 
 
-'''
-input_dir: the directory for storing the input files that do not change
-node_dir: the directory for the current node in the hierarchy
-n_cluster: the number of clusters
-filter_thre: the threshold for filtering general keywords in the caseolap phase
-parent: the name of the parent node
-n_expand: the number of phrases to expand from the center
-level: the current level in the recursion
-'''
+    '''
+        input_dir: the directory for storing the input files that do not change
+        node_dir: the directory for the current node in the hierarchy
+        n_cluster: the number of clusters
+        filter_thre: the threshold for filtering general keywords in the caseolap phase
+        parent: the name of the parent node
+        n_expand: the number of phrases to expand from the center
+        level: the current level in the recursion
+    '''
 
 
 def recur(input_dir, node_dir, n_cluster, parent, n_cluster_iter, filter_thre,\
@@ -195,7 +199,9 @@ def recur(input_dir, node_dir, n_cluster, parent, n_cluster_iter, filter_thre,\
     print('============================= Running level ', level, ' and node ', parent, '=============================')
     start = time.time()
     df = DataFiles(input_dir, node_dir)
+    
     ## TODO: Everytime we need to read-in the whole corpus, which can be slow.
+    
     full_data = DataSet(df.embedding_file, df.doc_file)
     end = time.time()
     print('[Main] Done reading the full data using time %s seconds' % (end-start))
@@ -288,9 +294,10 @@ def main(opt):
 if __name__ == '__main__':
     
     dir_path=sys.argv[1]
+    clusterInfo=ast.literal_eval(sys.argv[2])
+    MAX_LEVEL=int(sys.argv[3])
     # opt = load_toy_params()
     # opt = load_dblp_params()
     # opt = load_sp_params()
     opt = load_dblp_params_method(dir_path)
     main(opt)
-

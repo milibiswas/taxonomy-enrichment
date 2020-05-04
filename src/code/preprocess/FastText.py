@@ -29,6 +29,9 @@ class FastText(object):
         self.seed=seed
         self.model=None
         
+    def save(self,path):
+        self.model.save(path)
+        
     def train(self,):
         # Hyper parameters
         #negative_sampling=5
@@ -44,7 +47,7 @@ class FastText(object):
                            )
         
         self.model=model
-        print('Model is trained.')
+        print('[Info]: Model is trained')
     
     def __getVocabulary(self,keywordList):
         inpVoc=list(set(keywordList))
@@ -93,10 +96,10 @@ class FastText(object):
                     fout.write(w)
                     fout.write('\n')
                     cnt+=1
-            print('Keywords save : total {}'.format(cnt))
+            print('[Info]: Keywords save : total {}'.format(cnt))
             
         except Exception as err:
-            print('Error occurred in savekeywords() method, check logs for details analysis')
+            print('[Error]: Error occurred in savekeywords() method, check logs for details analysis')
             print(str(err))
             sys.exit(1)
             
@@ -107,7 +110,7 @@ class FastText(object):
                 for blog in self.corpus:
                     fout.write(' '.join(blog))
                     fout.write('\n')
-            print('Corpus saved at : ',path)
+            print('[Info]: Corpus saved at : ',path)
             
         except Exception as err:
             print('Error occurred in saveCorpus() method, check logs for details analysis')
