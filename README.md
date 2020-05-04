@@ -32,9 +32,10 @@ ___
  | -------- | -------- | -------- |
  | taxogen    | amazon_fashion  | (0,1] |
  | hlda       | bbc             |  |
- | nethiex    | dblp            |  |
- | nole       | 20newsgroup     |  |
- | noac       |                 |  |
+ | ncrp       | dblp            |  |
+ | taxogen_nole       | 20newsgroup     |  |
+ | taxogen_noac       |                 |  |
+ | hclus      |       |                 |  |
 
 
 ### Execution examples
@@ -68,9 +69,9 @@ ___
     Taxogen with no local embedding
     Taxogen with no adaptive clustering
     HCLUS : Hierarchical Clustering
-    Nethiex : Taxonomy building based on chinese resturant process
+    ncrp : Taxonomy building based on chinese resturant process
 ```
 ## Note:
 
-HLDA & Nethiex integration are under development.<br/>
-BBC, DBLP dataset integration are under development.
+HLDA is under development.<br/>
+20Newsgroup dataset addition is under development
