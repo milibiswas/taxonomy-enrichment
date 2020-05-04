@@ -64,12 +64,12 @@ ___
 ```
 ### Algorithms
 ```
-    Taxogen : Unsupervised way to build taxonomy
-    HLDA : Hierarchical Latent Dirichlet Allocation
-    Taxogen with no local embedding
-    Taxogen with no adaptive clustering
-    HCLUS : Hierarchical Clustering
-    ncrp : Taxonomy building based on chinese resturant process
+    taxogen      : Unsupervised way to build taxonomy
+    hlda         : Hierarchical Latent Dirichlet Allocation
+    taxogen_nole : Taxogen with no local embedding
+    taxogen_noac : Taxogen with no adaptive clustering
+    hclus        : Hierarchical Clustering
+    ncrp         : Taxonomy building based on chinese resturant process
 ```
 ## Note:
 
