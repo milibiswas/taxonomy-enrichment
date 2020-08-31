@@ -1,5 +1,5 @@
-# taxonomy-build-algorithm
-This repository contains different algorithms that are used to build taxonomy from different text corpus.
+# taxonomy-enrichment
+This repository contains different algorithms that are used to build taxonomy from different text corpus. It also contains novel approach to enrich taxonomy when new set of data is available from same domain of knowledge.
 
 ## Prerequisites and dependencies
 
