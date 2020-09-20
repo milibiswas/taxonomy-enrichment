@@ -169,7 +169,7 @@ class Data(object):
     
     @staticmethod
     def parse(path):
-        g = open(path, 'r')
+        g = gzip.open(path, 'rb')
         for l in g:
             yield eval(l)
             
