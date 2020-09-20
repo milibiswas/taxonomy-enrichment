@@ -76,7 +76,8 @@ class Data(object):
         self.tempPath='./src/data/tmp/'
         self.volume=float(dataVolume)
         self.url={
-                'amazon_review':'http://deepyeti.ucsd.edu/jianmo/amazon/categoryFilesSmall/AMAZON_FASHION_5.json.gz',
+                #'amazon_fashion':'http://deepyeti.ucsd.edu/jianmo/amazon/categoryFilesSmall/AMAZON_FASHION_5.json.gz',
+                'amazon_fashion': 'http://snap.stanford.edu/data/amazon/productGraph/categoryFiles/reviews_Clothing_Shoes_and_Jewelry.json.gz',
                 'bbc':'http://mlg.ucd.ie/files/datasets/bbc-fulltext.zip',
                 'dblp':'http://dblp.org/xml/dblp.xml.gz',
                 '20newsgroup':'NA'}
