@@ -18,7 +18,10 @@ dirPath='./data/'
 
 if __name__=='__main__':
     try:
+        # This part is parameters assignments
+        
         argv=sys.argv[1:]
+        
         if len(argv)==5:
             
             tempDirPath=argv[0]
@@ -26,7 +29,7 @@ if __name__=='__main__':
             clusterInfo=ast.literal_eval(argv[2])
             maxLevel=int(argv[3])
             jsonFilePath=argv[4]
-            
+
             if datasetName=='bbc':
                 '''
                     This is for BBC dataset prep for ncrp algorithm
@@ -37,6 +40,7 @@ if __name__=='__main__':
                 
                 corpus={}
                 cnt=0
+                
                 with open(os.path.join(tempDirPath,'papers.txt'),'r') as fin:
                     try:
                         for key,line in enumerate(fin):

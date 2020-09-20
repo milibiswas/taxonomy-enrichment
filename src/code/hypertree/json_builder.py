@@ -23,6 +23,10 @@ class JsonBuild(object):
             if self.dataDict==None:
                 raise Exception
             else:
+                with open('./src/data/output/taxonomy.json','w') as fout:
+                    json.dump(self.dataDict,fout)
+                print('[Info]: Json file created at :','./src/data/output/taxonomy.json')
+                
                 with open(path,'w') as fout:
                     fout.write('function json_data() {')
                     fout.write('\n')

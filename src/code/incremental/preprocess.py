@@ -101,7 +101,7 @@ class Data(object):
         
         inpData=[]
         
-        with open(file,'r') as fin:
+        with open(file,'r',encoding='utf8') as fin:
             for line in fin:
                 if line:
                     inpData.append(line.strip('\n'))

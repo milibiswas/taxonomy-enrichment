@@ -7,7 +7,14 @@ Created on Sat Feb  8 12:52:48 2020
 """
 
 from gensim.models import FastText as ft_model
+from gensim.models import Word2Vec as w2v
 import sys
+import numpy as np
+
+
+np.random.seed(0)
+PYTHONHASHSEED=0
+
 
 #---------------------------------
 # Model class - skipgram
@@ -18,7 +25,7 @@ class FastText(object):
     '''
             Fasttext -> from gensim
     '''
-    def __init__(self,corpus=None,size=60,window=5,min_count=5,sample=1e-4,sg=1,iter=5,seed=0):
+    def __init__(self,corpus=None,size=60,window=5,min_count=5,sample=1e-4,sg=1,iter=200,seed=0):
         self.corpus=corpus
         self.size=size
         self.window=window
@@ -30,7 +37,8 @@ class FastText(object):
         self.model=None
         
     def save(self,path):
-        self.model.save(path)
+        #self.model.save(path)
+        self.model.wv.save_word2vec_format(path)
         
     def train(self,):
         # Hyper parameters
@@ -43,7 +51,8 @@ class FastText(object):
                            sample=self.sample,
                            sg=self.sg,
                            iter=self.iter,
-                           seed=self.seed
+                           seed=self.seed,
+                           workers=1
                            )
         
         self.model=model

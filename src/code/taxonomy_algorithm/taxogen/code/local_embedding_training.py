@@ -3,20 +3,30 @@
 __author__: Chao Zhang
 __description__: Run local embedding using word2vec
 __latest_updates__: 09/26/2017
+__Modified by : Mili Biswas (UNIFR)
+__update date : May 2020 
 '''
+import numpy as np
 import argparse
 import subprocess
 import utils
 import os
 from gensim.models import FastText
 
+
+np.random.seed(0)
 PYTHONHASHSEED=0
 
 #----------------------------------------------------------------------------------------------------------------------------
 # Modified by Mili Biswas, for Taxonomy Building based on Fashion Data (Amazon Review + FashionBlog)
 #----------------------------------------------------------------------------------------------------------------------------
 
-def word2vec(inputFile,outputFile,size=60,window=5,min_count=5,epoch=5,down_sampling=1e-4):
+def save(model,path):
+        #self.model.save(path)
+        print('[Info]: The word2vec trained model is saved at ',path)
+        model.wv.save_word2vec_format(path)
+
+def word2vec(inputFile,outputFile,SIZE,SAMPLE,WINDOW,MIN_COUNT,ITER):
     '''
         This function triggers the FastText model
         Parameters:
@@ -39,14 +49,14 @@ def word2vec(inputFile,outputFile,size=60,window=5,min_count=5,epoch=5,down_samp
     
     
     try:
-        model = FastText(size=size, window=window, min_count=min_count,seed=0,workers=1)   # instantiate the fasttext model
+        model = FastText(size=SIZE, window=WINDOW, min_count=MIN_COUNT,seed=0,workers=1)   # instantiate the fasttext model
         model.build_vocab(sentences=word_tokenized_corpus)                                 # build the vocabulary
         model.train(
                     sentences=word_tokenized_corpus, 
                     total_examples=len(word_tokenized_corpus),
                     sg=1,
-                    sample=down_sampling, 
-                    epochs=epoch
+                    sample=SAMPLE, 
+                    epochs=ITER
                   )
         
         
@@ -59,7 +69,7 @@ def word2vec(inputFile,outputFile,size=60,window=5,min_count=5,epoch=5,down_samp
                 continue
             
         no_of_words=len(model.wv.vocab)
-        dimension=size
+        dimension=SIZE
 
         with open(outputFile,'w') as fout:
             fout.write(str(no_of_words)+' '+str(dimension)+'\n')
@@ -71,7 +81,7 @@ def word2vec(inputFile,outputFile,size=60,window=5,min_count=5,epoch=5,down_samp
         
     except Exception as err:
         print(err)
-    return None
+    return model       # Changed here from None to model
 
 
 def read_files(folder, parent):
@@ -163,7 +173,7 @@ def revevant_docs(text, reidx, cates):
     return pd_map, docs
 
 
-def run_word2vec(pd_map, docs, cates, folder):
+def run_word2vec(pd_map, docs, cates, folder, level, MAX_LEVEL,SIZE,SAMPLE,WINDOW,MIN_COUNT,ITER):
 
     for cate in cates:
 
@@ -192,15 +202,18 @@ def run_word2vec(pd_map, docs, cates, folder):
         # embed_proc = subprocess.Popen(["./word2vec", "-threads", "20", "-train", input_f, "-output", output_f], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         # embed_proc.wait()
         #subprocess.call(["./word2vec", "-threads", "20", "-train", input_f, "-output", output_f,"-size","60"])
-        word2vec(input_f,output_f)
+        model=word2vec(input_f,output_f,SIZE,SAMPLE,WINDOW,MIN_COUNT,ITER)
         print('[Local-embedding] done training word2vec')
+        
+        if level==(MAX_LEVEL-3):
+            save(model,os.path.join('../../../../data/tmp/local_embeds',cate))
 
 
-def main_local_embedding(folder, doc_file, reidx, parent, N):
+def main_local_embedding(folder, doc_file, reidx, parent, N,level,MAX_LEVEL,SIZE,SAMPLE,WINDOW,MIN_COUNT,ITER):
     embs, keywords, cates = read_files(folder, parent)
     cates = relevant_phs(embs, cates, int(N))
     pd_map, docs = revevant_docs(doc_file, reidx, cates)
-    run_word2vec(pd_map, docs, cates, folder)
+    run_word2vec(pd_map, docs, cates, folder,level,MAX_LEVEL,SIZE,SAMPLE,WINDOW,MIN_COUNT,ITER)
 
 
 if __name__ == "__main__":

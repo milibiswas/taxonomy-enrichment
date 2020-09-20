@@ -22,11 +22,31 @@ export outputPath
 corpusName=${3}
 export corpusName
 
+## other parameters
+
 clusterInfo=${4}
 export clusterInfo
 
 maxLevel=${5}
 export maxLevel
+
+size=${6}
+export sample
+
+sample=${7}
+export sample
+
+window=${8}
+export window
+
+min_count=${9}
+export min_count
+
+shift
+
+iter=${9}
+export iter
+
 
 if [ -d "$inputPath" ]; then
 # Take action if $inputPath exists. #
@@ -137,7 +157,7 @@ if [ -d "${outputPath}/${corpusName}/our-l3-0.15" ]; then
 fi
 
 echo '[Info]: Running TaxonGen algorithm'
-python3 main.py ${outputPath}/${corpusName}/ "${clusterInfo}" ${maxLevel}
+python3 main.py ${outputPath}/${corpusName}/ "${clusterInfo}" ${maxLevel} ${size} ${sample} ${window} ${min_count} ${iter}
 
 echo 'Generate compressed taxonomy'
 if [ ! -d ${outputPath}/${corpusName}/taxonomies ]; then

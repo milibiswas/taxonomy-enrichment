@@ -2,6 +2,8 @@
 __author__: Chao Zhang
 __description__: A wrapper for spherecluster, implement the term clustering component.
 __latest_updates__: 09/25/2017
+__Modified by:  Mili Biswas (UNIFR)
+__update date:  May 2020
 '''
 from collections import defaultdict
 import numpy as np
@@ -19,7 +21,7 @@ class Clusterer:
     def __init__(self, data, n_cluster):
         self.data = data
         self.n_cluster = n_cluster
-        self.clus = SphericalKMeans(n_cluster) # Change by Mili (added Random State)
+        self.clus = SphericalKMeans(n_cluster,random_state=0) # Change by Mili (added Random State)
         #self.clus = KMeans(n_cluster)
         self.clusters = defaultdict(list)  # cluster id -> members
         self.membership = None  # a list contain the membership of the data points

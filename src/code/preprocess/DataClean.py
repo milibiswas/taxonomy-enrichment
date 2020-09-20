@@ -74,7 +74,7 @@ class Data(object):
         self.inputFile='./src/data/input/corpus/'+dataSetName+'_corpus.txt'
         self.inputKeyFile='./src/data/input/keywords/'+dataSetName+'_keywords.txt'
         self.tempPath='./src/data/tmp/'
-        self.volume=dataVolume
+        self.volume=float(dataVolume)
         self.url={
                 'amazon_review':'http://deepyeti.ucsd.edu/jianmo/amazon/categoryFilesSmall/AMAZON_FASHION_5.json.gz',
                 'bbc':'http://mlg.ucd.ie/files/datasets/bbc-fulltext.zip',
@@ -103,12 +103,14 @@ class Data(object):
         self.targetLabel=None
         
         
-        # Methods in init()       
+        # Methods in init()
         try:
-            if dataVolume <=0 or dataVolume>1.0:
+            if self.volume<=0 or self.volume>100:
                 raise CustomErrorDataVolumeCheck
         except CustomErrorDataVolumeCheck:
-            sys.exit('dataVolume should be within (0,1.0] range and provided as {}'.format(dataVolume))
+            print('[Error]: percent of data is given wrong. Value must belong to (0,100]')
+            sys.exit(1)
+        
         
     def downloadData(self,filePath,url):
         '''
@@ -155,11 +157,11 @@ class Data(object):
             for paper in root.iter('inproceedings'):
                 booktitle = next(paper.iter('booktitle')).text
                 
-                year = int(next(paper.iter('year')).text)
+                #year = int(next(paper.iter('year')).text)     # This has been commented by Mili (not used in the filter)
 
                 # TODO -- the year & book category can be made parameterized
                 
-                if booktitle == category and year <= 2016:   
+                if booktitle == category:       # year has been removed from filter
                     articles.append(paper)
                     cnt += 1
         return articles
@@ -188,7 +190,7 @@ class Data(object):
         
         inpData=[]
         
-        with open(file,'r') as fin:
+        with open(file,'r',encoding='utf8') as fin:
             for line in fin:
                 if line:
                     inpData.append(line.strip('\n'))
@@ -503,7 +505,7 @@ class Data(object):
                     topics[key] = []
                 topics[key].append(tl)
                     
-            with open(self.inputFile,'w') as fin:
+            with open(self.inputFile,'w',encoding='utf8') as fin:
                    for key,val in topics.items():
                        for title in val:
                            if title:
@@ -587,9 +589,10 @@ class Data(object):
             
             reviewSeries.to_pickle(os.path.join(self.tempPath,pickleDataFileName))
             
-        if self.volume != 1.0:
+        if self.volume != 100.0:
+            v=self.volume/100
             upperLimit=reviewSeries.count()
-            lowerLimit=int(upperLimit*self.volume)
+            lowerLimit=int(upperLimit*v)
             index=np.random.choice(upperLimit, lowerLimit,replace=False)
             modReviewSeries=reviewSeries.loc[ index ]
             self.outputProcessedCorpus=list(modReviewSeries)

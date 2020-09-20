@@ -1,16 +1,58 @@
-fashion,cloth,coat,puffer,1
-fashion,cloth,coat,trench_coat,1
-fashion,cloth,coat,cashmere_coat,1
-fashion,cloth,coat,suede_coat,1
-fashion,cloth,coat,shearling_coat,1
-fashion,cloth,coat,microfiber_coat,1
-fashion,cloth,coat,wool_coat,1
-fashion,cloth,coat,puffer_coat,1
-fashion,cloth,coat,parka,1
-fashion,cloth,coat,short_coat,1
-fashion,cloth,coat,waistcoat,1
-fashion,cloth,coat,white_coat,1
-fashion,cloth,coat,blazer,1
+fashion,cloth,coat & jacket & sweater,puffer,1
+fashion,cloth,coat & jacket & sweater,trench_coat,1
+fashion,cloth,coat & jacket & sweater,cashmere_coat,1
+fashion,cloth,coat & jacket & sweater,suede_coat,1
+fashion,cloth,coat & jacket & sweater,shearling_coat,1
+fashion,cloth,coat & jacket & sweater,microfiber_coat,1
+fashion,cloth,coat & jacket & sweater,wool_coat,1
+fashion,cloth,coat & jacket & sweater,puffer_coat,1
+fashion,cloth,coat & jacket & sweater,parka,1
+fashion,cloth,coat & jacket & sweater,short_coat,1
+fashion,cloth,coat & jacket & sweater,waistcoat,1
+fashion,cloth,coat & jacket & sweater,white_coat,1
+fashion,cloth,coat & jacket & sweater,blazer,1
+fashion,cloth,coat & jacket & sweater,cashmere_sweater,1
+fashion,cloth,coat & jacket & sweater,cardigan_sweater,1
+fashion,cloth,coat & jacket & sweater,crewneck_sweater,1
+fashion,cloth,coat & jacket & sweater,half-zip_sweater,1
+fashion,cloth,coat & jacket & sweater,sweater_vest,1
+fashion,cloth,coat & jacket & sweater,turtleneck_sweater,1
+fashion,cloth,coat & jacket & sweater,polo_sweater,1
+fashion,cloth,coat & jacket & sweater,v-neck_sweater,1
+fashion,cloth,coat & jacket & sweater,sport_jacket,1
+fashion,cloth,coat & jacket & sweater,box_jacket,1
+fashion,cloth,coat & jacket & sweater,cycle_jacket,1
+fashion,cloth,coat & jacket & sweater,football_jacket,1
+fashion,cloth,coat & jacket & sweater,golf_jacket,1
+fashion,cloth,coat & jacket & sweater,hike_jacket,1
+fashion,cloth,coat & jacket & sweater,run_jacket,1
+fashion,cloth,coat & jacket & sweater,skateboard_jacket,1
+fashion,cloth,coat & jacket & sweater,snowboard_jacket,1
+fashion,cloth,coat & jacket & sweater,soccer_jacket,1
+fashion,cloth,coat & jacket & sweater,tennis_jacket,1
+fashion,cloth,coat & jacket & sweater,motorcycle_jacket,1
+fashion,cloth,coat & jacket & sweater,golf_jacket,1
+fashion,cloth,coat & jacket & sweater,athletic_jacket,1
+fashion,cloth,coat & jacket & sweater,fleece_jacket,1
+fashion,cloth,coat & jacket & sweater,lightweight_jacket,1
+fashion,cloth,coat & jacket & sweater,down_jacket,1
+fashion,cloth,coat & jacket & sweater,denim_jacket,1
+fashion,cloth,coat & jacket & sweater,winter_jacket,1
+fashion,cloth,coat & jacket & sweater,sport_jacket,1
+fashion,cloth,coat & jacket & sweater,maternity_jacket,1
+fashion,cloth,coat & jacket & sweater,motorcycle_jacket,1
+fashion,cloth,coat & jacket & sweater,suede_jacket,1
+fashion,cloth,coat & jacket & sweater,leather_jacket,1
+fashion,cloth,coat & jacket & sweater,shearling_jacket,1
+fashion,cloth,coat & jacket & sweater,microfiber_jacket,1
+fashion,cloth,coat & jacket & sweater,rain_jacket,1
+fashion,cloth,coat & jacket & sweater,suit_jacket,1
+fashion,cloth,coat & jacket & sweater,tuxedo_jacket,1
+fashion,cloth,coat & jacket & sweater,rainwear_jacket,1
+fashion,cloth,coat & jacket & sweater,scrub_jacket,1
+fashion,cloth,coat & jacket & sweater,light_weight_sweater,1
+fashion,cloth,coat & jacket & sweater,vest,1
+fashion,cloth,coat & jacket & sweater,leather_jacket,1
 fashion,cloth,dress,sport_dress,2
 fashion,cloth,dress,tennis_dress,2
 fashion,cloth,dress,dance_dress,2
@@ -31,513 +73,314 @@ fashion,cloth,dress,sweater_dress,2
 fashion,cloth,dress,tank_dress,2
 fashion,cloth,dress,wrap_dress,2
 fashion,cloth,dress,day_dress,2
-fashion,cloth,jacket,sport_jacket,3
-fashion,cloth,jacket,box_jacket,3
-fashion,cloth,jacket,cycle_jacket,3
-fashion,cloth,jacket,football_jacket,3
-fashion,cloth,jacket,golf_jacket,3
-fashion,cloth,jacket,hike_jacket,3
-fashion,cloth,jacket,run_jacket,3
-fashion,cloth,jacket,skateboard_jacket,3
-fashion,cloth,jacket,snowboard_jacket,3
-fashion,cloth,jacket,soccer_jacket,3
-fashion,cloth,jacket,tennis_jacket,3
-fashion,cloth,jacket,motorcycle_jacket,3
-fashion,cloth,jacket,golf_jacket,3
-fashion,cloth,jacket,athletic_jacket,3
-fashion,cloth,jacket,fleece_jacket,3
-fashion,cloth,jacket,lightweight_jacket,3
-fashion,cloth,jacket,down_jacket,3
-fashion,cloth,jacket,denim_jacket,3
-fashion,cloth,jacket,winter_jacket,3
-fashion,cloth,jacket,sport_jacket,3
-fashion,cloth,jacket,maternity_jacket,3
-fashion,cloth,jacket,motorcycle_jacket,3
-fashion,cloth,jacket,suede_jacket,3
-fashion,cloth,jacket,leather_jacket,3
-fashion,cloth,jacket,shearling_jacket,3
-fashion,cloth,jacket,microfiber_jacket,3
-fashion,cloth,jacket,rain_jacket,3
-fashion,cloth,jacket,suit_jacket,3
-fashion,cloth,jacket,tuxedo_jacket,3
-fashion,cloth,jacket,rainwear_jacket,3
-fashion,cloth,jacket,scrub_jacket,3
-fashion,cloth,jacket,chef's_jacket,3
-fashion,cloth,jersey,sport_jersey,4
-fashion,cloth,jersey,basketball_jersey,4
-fashion,cloth,jersey,bowl_jersey,4
-fashion,cloth,jersey,climb_jersey,4
-fashion,cloth,jersey,football_jersey,4
-fashion,cloth,jersey,golf_jersey,4
-fashion,cloth,jersey,run_jersey,4
-fashion,cloth,jersey,voley_ball_jersey,4
-fashion,cloth,jersey,bicycle_jersey,4
-fashion,cloth,pant,sport_pant,5
-fashion,cloth,pant,track_pant,5
-fashion,cloth,pant,golf_pant,5
-fashion,cloth,pant,rock_climb_pant,5
-fashion,cloth,pant,yoga_pant,5
-fashion,cloth,pant,cycle_pant,5
-fashion,cloth,pant,football_pant,5
-fashion,cloth,pant,hike_pant,5
-fashion,cloth,pant,ice_hokey_pant,5
-fashion,cloth,pant,skateboard_pant,5
-fashion,cloth,pant,snowboard_pant,5
-fashion,cloth,pant,soccer_pant,5
-fashion,cloth,pant,tennis_pant,5
-fashion,cloth,pant,hunt_pant,5
-fashion,cloth,pant,tactical_pant,5
-fashion,cloth,pant,motorcycle_pant,5
-fashion,cloth,pant,business_pant,5
-fashion,cloth,pant,casual_pant,5
-fashion,cloth,pant,jogger_pant,5
-fashion,cloth,pant,rain_pant,5
-fashion,cloth,pant,maternity_pant,5
-fashion,cloth,pant,cargo_pant,5
-fashion,cloth,pant,carpenter_pant,5
-fashion,cloth,pant,chino_pant,5
-fashion,cloth,pant,khaki_pant,5
-fashion,cloth,pant,crop_pant,5
-fashion,cloth,pant,knit_pant,5
-fashion,cloth,pant,wide-leg_pant,5
-fashion,cloth,pant,overall_pant,5
-fashion,cloth,pant,tuxedo_pant,5
-fashion,cloth,pant,traditional_leather_pant,5
-fashion,cloth,pant,toddler_pant,5
-fashion,cloth,pant,contractor_pant,5
-fashion,cloth,pant,chef's_pant,5
-fashion,cloth,pant,scrub_pant,5
-fashion,cloth,pant,trouser,5
-fashion,cloth,pant,sport_trouser,5
-fashion,cloth,pant,hakama_trouser,5
-fashion,cloth,suit,jumpsuit,6
-fashion,cloth,suit,suit_vest,6
-fashion,cloth,suit,tuxedo,6
-fashion,cloth,suit,dress_suit,6
-fashion,cloth,suit,pantsuit,6
-fashion,cloth,suit,skirt_suit,6
-fashion,cloth,suit,tuxedo_suit,6
-fashion,cloth,suit,suit_set,6
-fashion,cloth,suit,rain_suit,6
-fashion,cloth,suit,flight_suit,6
-fashion,cloth,jean,bootcut_jean,7
-fashion,cloth,jean,crop_jean,7
-fashion,cloth,jean,distress_jean,7
-fashion,cloth,jean,flare_jean,7
-fashion,cloth,jean,maternity_jean,7
-fashion,cloth,jean,relax_jean,7
-fashion,cloth,jean,skinny_jean,7
-fashion,cloth,jean,stretch_jean,7
-fashion,cloth,jean,slim_jean,7
-fashion,cloth,jean,straight_leg_jean,7
-fashion,cloth,shirt,sport_shirt,8
-fashion,cloth,shirt,box_shirt,8
-fashion,cloth,shirt,hike_shirt,8
-fashion,cloth,shirt,cycle_shirt,8
-fashion,cloth,shirt,ice_hokey_shirt,8
-fashion,cloth,shirt,tennis_shirt,8
-fashion,cloth,shirt,basketball_shirt,8
-fashion,cloth,shirt,bowl_shirt,8
-fashion,cloth,shirt,fitness_shirt,8
-fashion,cloth,shirt,exercise_shirt,8
-fashion,cloth,shirt,golf_shirt,8
-fashion,cloth,shirt,soccer_shirt,8
-fashion,cloth,shirt,t-shirt,8
-fashion,cloth,shirt,sport_t-shirt,8
-fashion,cloth,shirt,ski_shirt,8
-fashion,cloth,shirt,print_t-shirt,8
-fashion,cloth,shirt,pattern_t-shirt,8
-fashion,cloth,shirt,uni_t-shirt,8
-fashion,cloth,shirt,longsleeve_shirt,8
-fashion,cloth,shirt,shortsleeve_shirt,8
-fashion,cloth,shirt,button-down_shirt,8
-fashion,cloth,shirt,oxford_shirt,8
-fashion,cloth,shirt,dress_shirt,8
-fashion,cloth,shirt,henley_shirt,8
-fashion,cloth,shirt,rugby_shirt,8
-fashion,cloth,shirt,polo_shirt,8
-fashion,cloth,shirt,button_down_shirt,8
-fashion,cloth,shirt,turtleneck_shirt,8
-fashion,cloth,shirt,casual_shirt,8
-fashion,cloth,shirt,sleep_shirt,8
-fashion,cloth,shirt,sweatshirt,8
-fashion,cloth,shirt,toddler_undershirt,8
-fashion,cloth,shirt,scrub_shirt,8
-fashion,cloth,uniform,military_uniform,9
-fashion,cloth,uniform,school_uniform,9
-fashion,cloth,uniform,security_uniform,9
-fashion,cloth,uniform,sport_uniform,9
-fashion,cloth,uniform,baseball_uniform,9
-fashion,cloth,uniform,basketball_uniform,9
-fashion,cloth,uniform,cheerlead_uniform,9
-fashion,cloth,uniform,cricket_uniform,9
-fashion,cloth,uniform,football_uniform,9
-fashion,cloth,uniform,hockey_uniform,9
-fashion,cloth,uniform,martial_art_uniform,9
-fashion,cloth,uniform,officiate_uniform,9
-fashion,cloth,uniform,soccer_uniform,9
-fashion,cloth,uniform,softball_uniform,9
-fashion,cloth,uniform,wrestle_uniform,9
-fashion,cloth,uniform,chef's_uniform,9
-fashion,cloth,uniform,medical_uniform,9
-fashion,cloth,short,sport_short,10
-fashion,cloth,short,basketball_short,10
-fashion,cloth,short,bowl_short,10
-fashion,cloth,short,cycle_short,10
-fashion,cloth,short,football_short,10
-fashion,cloth,short,hike_short,10
-fashion,cloth,short,ice_hokey_short,10
-fashion,cloth,short,run_short,10
-fashion,cloth,short,skateboard_short,10
-fashion,cloth,short,ski_short,10
-fashion,cloth,short,tennis_short,10
-fashion,cloth,short,voleyball_short,10
-fashion,cloth,short,box_short,10
-fashion,cloth,short,bicycle_short,10
-fashion,cloth,short,martial_art_short,10
-fashion,cloth,short,golf_short,10
-fashion,cloth,short,climb_short,10
-fashion,cloth,short,soccer_short,10
-fashion,cloth,short,run_short,10
-fashion,cloth,short,maternity_short,10
-fashion,cloth,short,maternity_casual_short,10
-fashion,cloth,short,bermuda_short,10
-fashion,cloth,short,casual_short,10
-fashion,cloth,short,denim_short,10
-fashion,cloth,short,knit_short,10
-fashion,cloth,short,elastic_waist_short,10
-fashion,cloth,short,khaki_short,10
-fashion,cloth,short,board_short,10
-fashion,cloth,short,boy_short,10
-fashion,cloth,skirt,sport_skirt,11
-fashion,cloth,skirt,tennis_skirt,11
-fashion,cloth,skirt,dance_skirt,11
-fashion,cloth,skirt,maternity_skirt,11
-fashion,cloth,skirt,mid-length_skirt,11
-fashion,cloth,skirt,mini-skirts,11
-fashion,cloth,skirt,long_skirt,11
-fashion,cloth,skirt,costume_skirt,11
-fashion,cloth,sweater,cashmere_sweater,12
-fashion,cloth,sweater,cardigan_sweater,12
-fashion,cloth,sweater,crewneck_sweater,12
-fashion,cloth,sweater,half-zip_sweater,12
-fashion,cloth,sweater,sweater_vest,12
-fashion,cloth,sweater,turtleneck_sweater,12
-fashion,cloth,sweater,polo_sweater,12
-fashion,cloth,sweater,v-neck_sweater,12
-fashion,cloth,underwear,nurse_bra,13
-fashion,cloth,underwear,convertible_bra,13
-fashion,cloth,underwear,demi_cup_bra,13
-fashion,cloth,underwear,mastectomy_bra,13
-fashion,cloth,underwear,minimizer_bra,13
-fashion,cloth,underwear,push_up_bra,13
-fashion,cloth,underwear,sport_bra,13
-fashion,cloth,underwear,strapless_bra,13
-fashion,cloth,underwear,control_panty,13
-fashion,cloth,underwear,thong_panty,13
-fashion,cloth,underwear,pantyhose,13
-fashion,cloth,underwear,maternity_pantyhose,13
-fashion,cloth,underwear,maternity_panty,13
-fashion,cloth,underwear,sport_underwear,13
-fashion,cloth,underwear,thong_underwear,13
-fashion,cloth,underwear,thermal_underwear,13
-fashion,cloth,underwear,thermal_underwear_bottom,13
-fashion,cloth,underwear,thermal_underwear_top,13
-fashion,cloth,underwear,g-string,13
-fashion,cloth,underwear,men_boxer,13
-fashion,cloth,underwear,men_brief,13
-fashion,cloth,underwear,toddler_underwear,13
-fashion,cloth,swimwear,brief_swimwear,14
-fashion,cloth,swimwear,race_swim_suit,14
-fashion,cloth,swimwear,rash_guard,14
-fashion,cloth,swimwear,trunk_swimwear,14
-fashion,cloth,swimwear,cover-up_swimwear,14
-fashion,cloth,swimwear,one_piece_swimsuit,14
-fashion,cloth,swimwear,separate_swimwear,14
-fashion,cloth,swimwear,tankini_swimwear,14
-fashion,cloth,swimwear,baby_swimwear,14
-fashion,cloth,swimwear,toddler_swimwear,14
-fashion,cloth,swimwear,two-piece_bikini,14
-fashion,cloth,swimwear,bikini_top,14
-fashion,cloth,swimwear,bikini_bottom,14
-fashion,cloth,swimwear,bodysuits,14
-fashion,cloth,top,tank_top,15
-fashion,cloth,top,button_front_top,15
-fashion,cloth,top,camisole_top,15
-fashion,cloth,top,halter_top,15
-fashion,cloth,top,long_sleeve_top,15
-fashion,cloth,top,short_sleeve_top,15
-fashion,cloth,top,maternity_top,15
-fashion,cloth,top,nurse_top,15
-fashion,cloth,top,baby_top,15
-fashion,cloth,top,toddler_top,15
-fashion,cloth,shapewear,sport_tights,16
-fashion,cloth,shapewear,football_tights,16
-fashion,cloth,shapewear,skateboard_tights,16
-fashion,cloth,shapewear,bicycle_tights,16
-fashion,cloth,shapewear,control_top,16
-fashion,cloth,shapewear,full_slip,16
-fashion,cloth,shapewear,half_slip,16
-fashion,cloth,shapewear,mesh_tight,16
-fashion,cloth,shapewear,net_tight,16
-fashion,cloth,shapewear,opaque_tight,16
-fashion,cloth,shapewear,thong_tight,16
-fashion,cloth,shapewear,baby_tights,16
-fashion,cloth,shapewear,toddler_tights,16
-fashion,cloth,sleepwear,pajama,17
-fashion,cloth,sleepwear,pajama_bottom,17
-fashion,cloth,sleepwear,pajama_set,17
-fashion,cloth,sleepwear,pajama_top,17
-fashion,cloth,sleepwear,loungewear,17
-fashion,cloth,sleepwear,nightgown,17
-fashion,cloth,sleepwear,bathrobe,17
-fashion,cloth,sleepwear,baby_pajama,17
-fashion,cloth,sleepwear,toddler_pajama,17
-fashion,cloth,sleepwear,baby_sleepwear,17
-fashion,cloth,sleepwear,toddler_sleepwear,17
-fashion,cloth,sleepwear,baby_sleepsacks,17
-fashion,cloth,sleepwear,toddler_sleepsacks,17
-fashion,cloth,sleepwear,baby_rob,17
-fashion,cloth,sleepwear,toddler_rob,17
-fashion,cloth,sleepwear,blanket_sleeper,17
-fashion,shoe & sock,sock,men_sock,18
-fashion,shoe & sock,sock,crew_sock,18
-fashion,shoe & sock,sock,dress_sock,18
-fashion,shoe & sock,sock,ankle_sock,18
-fashion,shoe & sock,sock,boot_sock,18
-fashion,shoe & sock,sock,sport_sock,18
-fashion,shoe & sock,sock,bowl_sock,18
-fashion,shoe & sock,sock,basketball_sock,18
-fashion,shoe & sock,sock,cycle_sock,18
-fashion,shoe & sock,sock,football_sock,18
-fashion,shoe & sock,sock,golf_sock,18
-fashion,shoe & sock,sock,hike_sock,18
-fashion,shoe & sock,sock,ice_hokey_sock,18
-fashion,shoe & sock,sock,run_sock,18
-fashion,shoe & sock,sock,skateboard_sock,18
-fashion,shoe & sock,sock,snowboard_sock,18
-fashion,shoe & sock,sock,soccer_sock,18
-fashion,shoe & sock,sock,tennis_sock,18
-fashion,shoe & sock,sock,voley_ball_sock,18
-fashion,shoe & sock,sock,trouser_sock,18
-fashion,shoe & sock,sock,toddler_sock,18
-fashion,shoe & sock,sock,baby_sock,18
-fashion,shoe & sock,sock,footies,18
-fashion,shoe & sock,sock,knee-high,18
-fashion,shoe & sock,sock,gaiter,18
-fashion,shoe & sock,sock,shoe_cover,18
-fashion,shoe & sock,sock,shoelace,18
-fashion,shoe & sock,sock,boot_liner,18
-fashion,shoe & sock,shoe,flat_lace-up_shoe,19
-fashion,shoe & sock,shoe,sporty_lace-up_shoe,19
-fashion,shoe & sock,shoe,boat_shoe,19
-fashion,shoe & sock,shoe,boot,19
-fashion,shoe & sock,shoe,wellies,19
-fashion,shoe & sock,shoe,heel_boot,19
-fashion,shoe & sock,shoe,cowboy_boot,19
-fashion,shoe & sock,shoe,biker_boot,19
-fashion,shoe & sock,shoe,lace-up_boot,19
-fashion,shoe & sock,shoe,wellies,19
-fashion,shoe & sock,shoe,ankle_boot,19
-fashion,shoe & sock,shoe,snow_boot,19
-fashion,shoe & sock,shoe,moccasin,19
-fashion,shoe & sock,shoe,espadrille,19
-fashion,shoe & sock,shoe,sandal,19
-fashion,shoe & sock,shoe,flat_sandal,19
-fashion,shoe & sock,shoe,high_sandal,19
-fashion,shoe & sock,shoe,classic_sandal,19
-fashion,shoe & sock,shoe,sneaker,19
-fashion,shoe & sock,shoe,low-top_sneaker,19
-fashion,shoe & sock,shoe,high-top_sneaker,19
-fashion,shoe & sock,shoe,crib_shoe,19
-fashion,shoe & sock,shoe,first_walker_shoe,19
-fashion,shoe & sock,shoe,business_shoe,19
-fashion,shoe & sock,shoe,brogue,19
-fashion,shoe & sock,shoe,business_lace-up_shoe,19
-fashion,shoe & sock,shoe,business_slipper,19
-fashion,shoe & sock,shoe,mule_and_clog,19
-fashion,shoe & sock,shoe,wedge,19
-fashion,shoe & sock,shoe,athletic_shoe,19
-fashion,shoe & sock,shoe,oxford_shoe,19
-fashion,shoe & sock,shoe,heel,19
-fashion,shoe & sock,shoe,occupational_shoe,19
-fashion,shoe & sock,shoe,slipper,19
-fashion,shoe & sock,shoe,formal_shoe,19
-fashion,shoe & sock,shoe,flip_flop,19
-fashion,shoe & sock,shoe,casual_shoe,19
-fashion,shoe & sock,shoe,slip-on_shoe,19
-fashion,shoe & sock,shoe,costume_shoe,19
-fashion,shoe & sock,shoe,ballerina,19
-fashion,accessory,bag,wallet,20
-fashion,accessory,bag,small_bag,20
-fashion,accessory,bag,phone_case,20
-fashion,accessory,bag,wash_bag,20
-fashion,accessory,bag,belt_bag,20
-fashion,accessory,bag,backpack,20
-fashion,accessory,bag,tote_bag,20
-fashion,accessory,bag,diaper_bag,20
-fashion,accessory,bag,handbag,20
-fashion,accessory,bag,purse,20
-fashion,accessory,bag,baguette,20
-fashion,accessory,bag,bowl_bag,20
-fashion,accessory,bag,day_clutch,20
-fashion,accessory,bag,even_bag,20
-fashion,accessory,bag,hobo,20
-fashion,accessory,bag,tote_handbag,20
-fashion,accessory,bag,wristlet,20
-fashion,accessory,bag,handbag_accessory,20
-fashion,accessory,bag,backpack,20
-fashion,accessory,bag,bookbags,20
-fashion,accessory,bag,briefcase,20
-fashion,accessory,bag,laptop_bag,20
-fashion,accessory,bag,checkpoint-friendly_laptop_case,20
-fashion,accessory,bag,hard_drive_case,20
-fashion,accessory,bag,laptop_backpack,20
-fashion,accessory,bag,laptop_messenger_bag,20
-fashion,accessory,bag,laptop_sleeve,20
-fashion,accessory,bag,slipcases,20
-fashion,accessory,bag,netbook_case,20
-fashion,accessory,bag,projector_case,20
-fashion,accessory,bag,roll_laptop_case,20
-fashion,accessory,bag,wheel_laptop_case,20
-fashion,accessory,bag,travel_bag,20
-fashion,accessory,bag,shop_bag,20
-fashion,accessory,bag,carry_on_travel_bag,20
-fashion,accessory,bag,garment_bag,20
-fashion,accessory,bag,hardside_luggage,20
-fashion,accessory,bag,match_set_travel_bag,20
-fashion,accessory,bag,roll_luggage,20
-fashion,accessory,bag,tote_shop_bag,20
-fashion,accessory,bag,luggage_tag,20
-fashion,accessory,bag,pack_cub,20
-fashion,accessory,bag,pack_folder,20
-fashion,accessory,bag,shoe_bag,20
-fashion,accessory,bag,duffel_bag,20
-fashion,accessory,bag,gym_bag,20
-fashion,accessory,bag,fanny,20
-fashion,accessory,bag,waist_pack,20
-fashion,accessory,bag,travel_bag,20
-fashion,accessory,bag,shop_bag,20
-fashion,accessory,bag,reusable_eco_bag,20
-fashion,accessory,bag,business_card_case,20
-fashion,accessory,bag,credit_card_case,20
-fashion,accessory,bag,checkbook_holder,20
-fashion,accessory,bag,id_holder,20
-fashion,accessory,bag,badge_holder,20
-fashion,accessory,bag,men's_id_holder,20
-fashion,accessory,bag,men's_doc_holder,20
-fashion,accessory,bag,passport_holder,20
-fashion,accessory,bag,key_chain,20
-fashion,accessory,bag,ring,20
-fashion,accessory,bag,case,20
-fashion,accessory,bag,organizer,20
-fashion,accessory,bag,day_planner,20
-fashion,accessory,bag,money_clip,20
-fashion,accessory,bag,coin_purse,20
-fashion,accessory,bag,passport_holder,20
-fashion,accessory,bag,travel_wallet,20
-fashion,accessory,bag,lingerie_bag,20
-fashion,accessory,cap & hat,scrub_cap,21
-fashion,accessory,cap & hat,bald_cap,21
-fashion,accessory,cap & hat,costume_cap,21
-fashion,accessory,cap & hat,wig_cap,21
-fashion,accessory,cap & hat,baseball_cap,21
-fashion,accessory,cap & hat,knit_cap,21
-fashion,accessory,cap & hat,newsboy_cap,21
-fashion,accessory,cap & hat,chef's_hat,21
-fashion,accessory,cap & hat,costume_hat,21
-fashion,accessory,cap & hat,baby_hat,21
-fashion,accessory,cap & hat,toddler_hat,21
-fashion,accessory,cap & hat,hard_hat,21
-fashion,accessory,cap & hat,bowler_hat,21
-fashion,accessory,cap & hat,cowboy_hat,21
-fashion,accessory,cap & hat,derby_hat,21
-fashion,accessory,cap & hat,straw_hat,21
-fashion,accessory,cap & hat,sun_hat,21
-fashion,accessory,cap & hat,mask,21
-fashion,accessory,cap & hat,balaclava,21
-fashion,accessory,cap & hat,bandana,21
-fashion,accessory,cap & hat,fascinators,21
-fashion,accessory,cap & hat,headwear,21
-fashion,accessory,cap & hat,turban,21
-fashion,accessory,cap & hat,beret,21
-fashion,accessory,cap & hat,fedora,21
-fashion,accessory,cap & hat,beany,21
-fashion,accessory,cap & hat,visor,21
-fashion,accessory,watch & watch accessory,watch_band,22
-fashion,accessory,watch & watch accessory,watch_sticker,22
-fashion,accessory,watch & watch accessory,watch_winder,22
-fashion,accessory,scarf,cashmere_scarf,23
-fashion,accessory,scarf,knit_scarf,23
-fashion,accessory,scarf,print_scarf,23
-fashion,accessory,scarf,pattern_scarf,23
-fashion,accessory,scarf,rectangular_scarf,23
-fashion,accessory,scarf,silk_scarf,23
-fashion,accessory,scarf,square_scarf,23
-fashion,accessory,scarf,wool_scarf,23
-fashion,accessory,tie,bow_tie,24
-fashion,accessory,tie,neck_tie,24
-fashion,accessory,tie,ascot_tie,24
-fashion,accessory,tie,bolo_tie,24
-fashion,accessory,tie,zipper_tie,24
-fashion,accessory,tie,cravat,24
-fashion,accessory,tie,knit_tie,24
-fashion,accessory,tie,tie_clip,24
-fashion,accessory,hair accessory,hair_comb,25
-fashion,accessory,hair accessory,hair_extension,25
-fashion,accessory,hair accessory,hair_fork,25
-fashion,accessory,hair accessory,hair_stick,25
-fashion,accessory,hair accessory,hair_net,25
-fashion,accessory,hair accessory,hair_pin,25
-fashion,accessory,hair accessory,hair_claw,25
-fashion,accessory,hair accessory,hair_clip,25
-fashion,accessory,hair accessory,hair_wreath,25
-fashion,accessory,hair accessory,hair_bun,25
-fashion,accessory,hair accessory,wig_glue,25
-fashion,accessory,hair accessory,wig_tape,25
-fashion,accessory,hair accessory,ponytail_holder,25
-fashion,accessory,hair accessory,headband,25
-fashion,accessory,hair accessory,tiara,25
-fashion,accessory,hair accessory,headties,25
-fashion,accessory,hair accessory,bridal_veil,25
-fashion,accessory,jewellery,body_jewelry,26
-fashion,accessory,jewellery,bracelet,26
-fashion,accessory,jewellery,wristband,26
-fashion,accessory,jewellery,brooch,26
-fashion,accessory,jewellery,lapel_pin,26
-fashion,accessory,jewellery,charm,26
-fashion,accessory,jewellery,pendant,26
-fashion,accessory,jewellery,earring,26
-fashion,accessory,jewellery,necklace,26
-fashion,accessory,jewellery,ring,26
-fashion,accessory,other accessory,costume_glove,27
-fashion,accessory,other accessory,baby_belt,27
-fashion,accessory,other accessory,toddler_belt,27
-fashion,accessory,other accessory,baby_mitten,27
-fashion,accessory,other accessory,toddler_mitten,27
-fashion,accessory,other accessory,toddler_glove,27
-fashion,accessory,other accessory,baby_glove,27
-fashion,accessory,other accessory,belt,27
-fashion,accessory,other accessory,arm_warm,27
-fashion,accessory,other accessory,ear_muff,27
-fashion,accessory,other accessory,fingerless_glove,27
-fashion,accessory,other accessory,mitten,27
-fashion,accessory,other accessory,hand_muff,27
-fashion,accessory,other accessory,neck_warm,27
-fashion,accessory,other accessory,sash,27
-fashion,accessory,other accessory,belt_buckle,27
-fashion,accessory,other accessory,button_stud,27
-fashion,accessory,other accessory,collar_stay,27
-fashion,accessory,other accessory,cufflink,27
-fashion,accessory,other accessory,decorative_fan,27
-fashion,accessory,other accessory,eyewear,27
-fashion,accessory,other accessory,sunglass_lens_replacement,27
-fashion,accessory,other accessory,clear_glass,27
-fashion,accessory,other accessory,sunglass,27
-fashion,accessory,other accessory,glove,27
-fashion,accessory,other accessory,cummerbund,27
-fashion,accessory,other accessory,umbrella,27
-fashion,accessory,other accessory,handkerchief,27
-fashion,accessory,other accessory,collar_tip,27
-fashion,accessory,other accessory,anklet,27
-fashion,accessory,other accessory,decal,27
+fashion,cloth,dress,tutu,2
+fashion,cloth,dress,wed_dress,2
+fashion,cloth,pant & short,sport_short,3
+fashion,cloth,pant & short,basketball_short,3
+fashion,cloth,pant & short,bowl_short,3
+fashion,cloth,pant & short,cycle_short,3
+fashion,cloth,pant & short,football_short,3
+fashion,cloth,pant & short,hike_short,3
+fashion,cloth,pant & short,ice_hokey_short,3
+fashion,cloth,pant & short,run_short,3
+fashion,cloth,pant & short,skateboard_short,3
+fashion,cloth,pant & short,ski_short,3
+fashion,cloth,pant & short,tennis_short,3
+fashion,cloth,pant & short,voleyball_short,3
+fashion,cloth,pant & short,box_short,3
+fashion,cloth,pant & short,bicycle_short,3
+fashion,cloth,pant & short,martial_art_short,3
+fashion,cloth,pant & short,golf_short,3
+fashion,cloth,pant & short,climb_short,3
+fashion,cloth,pant & short,soccer_short,3
+fashion,cloth,pant & short,run_short,3
+fashion,cloth,pant & short,maternity_short,3
+fashion,cloth,pant & short,maternity_casual_short,3
+fashion,cloth,pant & short,bermuda_short,3
+fashion,cloth,pant & short,casual_short,3
+fashion,cloth,pant & short,denim_short,3
+fashion,cloth,pant & short,knit_short,3
+fashion,cloth,pant & short,elastic_waist_short,3
+fashion,cloth,pant & short,khaki_short,3
+fashion,cloth,pant & short,board_short,3
+fashion,cloth,pant & short,boy_short,3
+fashion,cloth,pant & short,sport_pant,3
+fashion,cloth,pant & short,track_pant,3
+fashion,cloth,pant & short,golf_pant,3
+fashion,cloth,pant & short,rock_climb_pant,3
+fashion,cloth,pant & short,yoga_pant,3
+fashion,cloth,pant & short,cycle_pant,3
+fashion,cloth,pant & short,football_pant,3
+fashion,cloth,pant & short,hike_pant,3
+fashion,cloth,pant & short,ice_hokey_pant,3
+fashion,cloth,pant & short,skateboard_pant,3
+fashion,cloth,pant & short,snowboard_pant,3
+fashion,cloth,pant & short,soccer_pant,3
+fashion,cloth,pant & short,tennis_pant,3
+fashion,cloth,pant & short,hunt_pant,3
+fashion,cloth,pant & short,tactical_pant,3
+fashion,cloth,pant & short,motorcycle_pant,3
+fashion,cloth,pant & short,business_pant,3
+fashion,cloth,pant & short,casual_pant,3
+fashion,cloth,pant & short,jogger_pant,3
+fashion,cloth,pant & short,rain_pant,3
+fashion,cloth,pant & short,maternity_pant,3
+fashion,cloth,pant & short,cargo_pant,3
+fashion,cloth,pant & short,carpenter_pant,3
+fashion,cloth,pant & short,chino_pant,3
+fashion,cloth,pant & short,khaki_pant,3
+fashion,cloth,pant & short,crop_pant,3
+fashion,cloth,pant & short,knit_pant,3
+fashion,cloth,pant & short,wide-leg_pant,3
+fashion,cloth,pant & short,overall_pant,3
+fashion,cloth,pant & short,tuxedo_pant,3
+fashion,cloth,pant & short,traditional_leather_pant,3
+fashion,cloth,pant & short,toddler_pant,3
+fashion,cloth,pant & short,contractor_pant,3
+fashion,cloth,pant & short,chef's_pant,3
+fashion,cloth,pant & short,scrub_pant,3
+fashion,cloth,pant & short,dungaree,3
+fashion,cloth,pant & short,culotte,3
+fashion,cloth,pant & short,trouser,3
+fashion,cloth,shirt,sport_shirt,4
+fashion,cloth,shirt,box_shirt,4
+fashion,cloth,shirt,hike_shirt,4
+fashion,cloth,shirt,cycle_shirt,4
+fashion,cloth,shirt,ice_hokey_shirt,4
+fashion,cloth,shirt,tennis_shirt,4
+fashion,cloth,shirt,basketball_shirt,4
+fashion,cloth,shirt,bowl_shirt,4
+fashion,cloth,shirt,fitness_shirt,4
+fashion,cloth,shirt,exercise_shirt,4
+fashion,cloth,shirt,golf_shirt,4
+fashion,cloth,shirt,soccer_shirt,4
+fashion,cloth,shirt,t-shirt,4
+fashion,cloth,shirt,sport_t-shirt,4
+fashion,cloth,shirt,ski_shirt,4
+fashion,cloth,shirt,print_t-shirt,4
+fashion,cloth,shirt,pattern_t-shirt,4
+fashion,cloth,shirt,uni_t-shirt,4
+fashion,cloth,shirt,longsleeve_shirt,4
+fashion,cloth,shirt,shortsleeve_shirt,4
+fashion,cloth,shirt,button-down_shirt,4
+fashion,cloth,shirt,oxford_shirt,4
+fashion,cloth,shirt,dress_shirt,4
+fashion,cloth,shirt,henley_shirt,4
+fashion,cloth,shirt,rugby_shirt,4
+fashion,cloth,shirt,polo_shirt,4
+fashion,cloth,shirt,button_down_shirt,4
+fashion,cloth,shirt,turtleneck_shirt,4
+fashion,cloth,shirt,casual_shirt,4
+fashion,cloth,shirt,sleep_shirt,4
+fashion,cloth,shirt,sweatshirt,4
+fashion,cloth,shirt,scrub_shirt,4
+fashion,cloth,shirt,long_sleeve_shirt,4
+fashion,cloth,lingerie,nurse_bra,5
+fashion,cloth,lingerie,convertible_bra,5
+fashion,cloth,lingerie,demi_cup_bra,5
+fashion,cloth,lingerie,mastectomy_bra,5
+fashion,cloth,lingerie,minimizer_bra,5
+fashion,cloth,lingerie,push_up_bra,5
+fashion,cloth,lingerie,sport_bra,5
+fashion,cloth,lingerie,strapless_bra,5
+fashion,cloth,lingerie,control_panty,5
+fashion,cloth,lingerie,thong_panty,5
+fashion,cloth,lingerie,pantyhose,5
+fashion,cloth,lingerie,maternity_pantyhose,5
+fashion,cloth,lingerie,maternity_panty,5
+fashion,cloth,lingerie,sport_underwear,5
+fashion,cloth,lingerie,thong_underwear,5
+fashion,cloth,lingerie,thermal_underwear,5
+fashion,cloth,lingerie,thermal_underwear_bottom,5
+fashion,cloth,lingerie,thermal_underwear_top,5
+fashion,cloth,lingerie,g-string,5
+fashion,cloth,lingerie,men_boxer,5
+fashion,cloth,lingerie,men_brief,5
+fashion,cloth,lingerie,toddler_underwear,5
+fashion,cloth,lingerie,tank_top,5
+fashion,cloth,lingerie,camisole_top,5
+fashion,cloth,lingerie,halter_top,5
+fashion,cloth,lingerie,blouse,5
+fashion,shoe & sock,sock,men_sock,6
+fashion,shoe & sock,sock,crew_sock,6
+fashion,shoe & sock,sock,dress_sock,6
+fashion,shoe & sock,sock,ankle_sock,6
+fashion,shoe & sock,sock,boot_sock,6
+fashion,shoe & sock,sock,sport_sock,6
+fashion,shoe & sock,sock,bowl_sock,6
+fashion,shoe & sock,sock,basketball_sock,6
+fashion,shoe & sock,sock,cycle_sock,6
+fashion,shoe & sock,sock,football_sock,6
+fashion,shoe & sock,sock,golf_sock,6
+fashion,shoe & sock,sock,hike_sock,6
+fashion,shoe & sock,sock,ice_hokey_sock,6
+fashion,shoe & sock,sock,run_sock,6
+fashion,shoe & sock,sock,skateboard_sock,6
+fashion,shoe & sock,sock,snowboard_sock,6
+fashion,shoe & sock,sock,soccer_sock,6
+fashion,shoe & sock,sock,tennis_sock,6
+fashion,shoe & sock,sock,voley_ball_sock,6
+fashion,shoe & sock,sock,trouser_sock,6
+fashion,shoe & sock,sock,toddler_sock,6
+fashion,shoe & sock,sock,baby_sock,6
+fashion,shoe & sock,shoe_accessory,footies,7
+fashion,shoe & sock,shoe_accessory,gaiter,7
+fashion,shoe & sock,shoe_accessory,shoe_cover,7
+fashion,shoe & sock,shoe_accessory,shoelace,7
+fashion,shoe & sock,shoe_accessory,boot_liner,7
+fashion,shoe & sock,shoe_accessory,shoe_bag,7
+fashion,shoe & sock,boot,boot,8
+fashion,shoe & sock,boot,wellies,8
+fashion,shoe & sock,boot,heel_boot,8
+fashion,shoe & sock,boot,cowboy_boot,8
+fashion,shoe & sock,boot,biker_boot,8
+fashion,shoe & sock,boot,lace-up_boot,8
+fashion,shoe & sock,boot,ankle_boot,8
+fashion,shoe & sock,boot,snow_boot,8
+fashion,shoe & sock,flat,boat_shoe,9
+fashion,shoe & sock,flat,moccasin,9
+fashion,shoe & sock,flat,espadrille,9
+fashion,shoe & sock,flat,sandal,9
+fashion,shoe & sock,flat,flat_sandal,9
+fashion,shoe & sock,flat,high_sandal,9
+fashion,shoe & sock,flat,classic_sandal,9
+fashion,shoe & sock,flat,flip_flop,9
+fashion,shoe & sock,flat,slipper,9
+fashion,shoe & sock,flat,slip-on_shoe,9
+fashion,shoe & sock,flat,ballerina,9
+fashion,shoe & sock,flat,flat_lace-up_shoe,9
+fashion,shoe & sock,flat,sporty_lace-up_shoe,9
+fashion,shoe & sock,other shoe,sneaker,10
+fashion,shoe & sock,other shoe,low-top_sneaker,10
+fashion,shoe & sock,other shoe,high-top_sneaker,10
+fashion,shoe & sock,other shoe,crib_shoe,10
+fashion,shoe & sock,other shoe,first_walker_shoe,10
+fashion,shoe & sock,other shoe,business_shoe,10
+fashion,shoe & sock,other shoe,brogue,10
+fashion,shoe & sock,other shoe,business_lace-up_shoe,10
+fashion,shoe & sock,other shoe,business_slipper,10
+fashion,shoe & sock,other shoe,mule_and_clog,10
+fashion,shoe & sock,other shoe,wedge,10
+fashion,shoe & sock,other shoe,athletic_shoe,10
+fashion,shoe & sock,other shoe,oxford_shoe,10
+fashion,shoe & sock,other shoe,occupational_shoe,10
+fashion,shoe & sock,other shoe,formal_shoe,10
+fashion,shoe & sock,other shoe,casual_shoe,10
+fashion,shoe & sock,other shoe,costume_shoe,10
+fashion,accessory,bag,wallet,11
+fashion,accessory,bag,small_bag,11
+fashion,accessory,bag,wash_bag,11
+fashion,accessory,bag,belt_bag,11
+fashion,accessory,bag,backpack,11
+fashion,accessory,bag,tote_bag,11
+fashion,accessory,bag,diaper_bag,11
+fashion,accessory,bag,handbag,11
+fashion,accessory,bag,purse,11
+fashion,accessory,bag,baguette,11
+fashion,accessory,bag,bowl_bag,11
+fashion,accessory,bag,day_clutch,11
+fashion,accessory,bag,even_bag,11
+fashion,accessory,bag,hobo,11
+fashion,accessory,bag,tote_handbag,11
+fashion,accessory,bag,backpack,11
+fashion,accessory,bag,bookbags,11
+fashion,accessory,bag,briefcase,11
+fashion,accessory,bag,laptop_bag,11
+fashion,accessory,bag,laptop_backpack,11
+fashion,accessory,bag,laptop_messenger_bag,11
+fashion,accessory,bag,laptop_sleeve,11
+fashion,accessory,bag,travel_bag,11
+fashion,accessory,bag,carry_on_travel_bag,11
+fashion,accessory,bag,garment_bag,11
+fashion,accessory,bag,match_set_travel_bag,11
+fashion,accessory,bag,roll_luggage,11
+fashion,accessory,bag,tote_shop_bag,11
+fashion,accessory,bag,luggage_tag,11
+fashion,accessory,bag,duffel_bag,11
+fashion,accessory,bag,gym_bag,11
+fashion,accessory,bag,waist_pack,11
+fashion,accessory,bag,shop_bag,11
+fashion,accessory,bag,reusable_eco_bag,11
+fashion,accessory,bag,fanny,11
+fashion,accessory,bag,travel_wallet,11
+fashion,accessory,case,phone_case,12
+fashion,accessory,case,checkpoint-friendly_laptop_case,12
+fashion,accessory,case,hard_drive_case,12
+fashion,accessory,case,slipcases,12
+fashion,accessory,case,netbook_case,12
+fashion,accessory,case,projector_case,12
+fashion,accessory,case,roll_laptop_case,12
+fashion,accessory,case,wheel_laptop_case,12
+fashion,accessory,case,business_card_case,12
+fashion,accessory,case,credit_card_case,12
+fashion,accessory,case,checkbook_holder,12
+fashion,accessory,case,id_holder,12
+fashion,accessory,case,badge_holder,12
+fashion,accessory,case,men's_id_holder,12
+fashion,accessory,case,men's_doc_holder,12
+fashion,accessory,case,passport_holder,12
+fashion,accessory,case,case,12
+fashion,accessory,case,organizer,12
+fashion,accessory,case,day_planner,12
+fashion,accessory,case,money_clip,12
+fashion,accessory,case,coin_purse,12
+fashion,accessory,case,passport_holder,12
+fashion,accessory,cap & hat,scrub_cap,13
+fashion,accessory,cap & hat,bald_cap,13
+fashion,accessory,cap & hat,costume_cap,13
+fashion,accessory,cap & hat,baseball_cap,13
+fashion,accessory,cap & hat,newsboy_cap,13
+fashion,accessory,cap & hat,chef's_hat,13
+fashion,accessory,cap & hat,costume_hat,13
+fashion,accessory,cap & hat,baby_hat,13
+fashion,accessory,cap & hat,toddler_hat,13
+fashion,accessory,cap & hat,hard_hat,13
+fashion,accessory,cap & hat,bowler_hat,13
+fashion,accessory,cap & hat,cowboy_hat,13
+fashion,accessory,cap & hat,derby_hat,13
+fashion,accessory,cap & hat,straw_hat,13
+fashion,accessory,cap & hat,sun_hat,13
+fashion,accessory,cap & hat,mask,13
+fashion,accessory,cap & hat,balaclava,13
+fashion,accessory,cap & hat,bandana,13
+fashion,accessory,cap & hat,fascinators,13
+fashion,accessory,cap & hat,turban,13
+fashion,accessory,cap & hat,beret,13
+fashion,accessory,cap & hat,fedora,13
+fashion,accessory,cap & hat,beany,13
+fashion,accessory,cap & hat,visor,13
+fashion,accessory,hair accessory,wig_cap,14
+fashion,accessory,hair accessory,hair_comb,14
+fashion,accessory,hair accessory,hair_extension,14
+fashion,accessory,hair accessory,hair_fork,14
+fashion,accessory,hair accessory,hair_stick,14
+fashion,accessory,hair accessory,hair_net,14
+fashion,accessory,hair accessory,hair_pin,14
+fashion,accessory,hair accessory,hair_claw,14
+fashion,accessory,hair accessory,hair_clip,14
+fashion,accessory,hair accessory,hair_wreath,14
+fashion,accessory,hair accessory,hair_bun,14
+fashion,accessory,hair accessory,wig_glue,14
+fashion,accessory,hair accessory,wig_tape,14
+fashion,accessory,hair accessory,ponytail_holder,14
+fashion,accessory,hair accessory,headband,14
+fashion,accessory,hair accessory,tiara,14
+fashion,accessory,hair accessory,headties,14
+fashion,accessory,hair accessory,bridal_veil,14
+fashion,accessory,jewellery,wristlet,15
+fashion,accessory,jewellery,watch_band,15
+fashion,accessory,jewellery,watch_sticker,15
+fashion,accessory,jewellery,watch_winder,15
+fashion,accessory,jewellery,body_jewelry,15
+fashion,accessory,jewellery,bracelet,15
+fashion,accessory,jewellery,wristband,15
+fashion,accessory,jewellery,brooch,15
+fashion,accessory,jewellery,lapel_pin,15
+fashion,accessory,jewellery,charm,15
+fashion,accessory,jewellery,pendant,15
+fashion,accessory,jewellery,earring,15
+fashion,accessory,jewellery,necklace,15
+fashion,accessory,jewellery,ring,15
+fashion,accessory,jewellery,cufflink,15
+fashion,accessory,jewellery,anklet,15
+fashion,accessory,jewellery,decal,15

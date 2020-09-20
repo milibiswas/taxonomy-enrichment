@@ -1,0 +1,39 @@
+#---------------------------------------------------------------------
+#   Name:config_incremental.yml
+#   Description: This is an YAML file specifically designed 
+#                to implement the automatic way of providing
+#                parameters to different algorithms at runtime
+#                and other configurations. This file will be used
+#                by enhancing taxonomy.
+#   Created By: Mili Biswas (Dept.of Informatics, UNIFR, Switzerland)
+#   Creation Date: 19-Mar-2020
+#   Version : 1.0
+#---------------------------------------------------------------------
+amazon_fashion:                        # This is name of the dataset
+        pathvariable:                  # This path variables values
+             {
+              corpusFile: './src/data/input/incremental_corpus/incremental_amazon_fashion_corpus.txt',
+              keywordsFile: './src/data/input/incremental_keywords/incremental_amazon_fashion_keywords.txt',
+              modelSavePath: './src/data/tmp/local_embeds',
+              groundTruthFile: './src/data/input/ground_truth/amazon_fashion_ground_truth.txt',
+              enhanceTxonomyFile: './src/data/output/enhanced_taxonomy.json'
+              }
+bbc:                                   # This is name of the dataset
+        pathvariable:                  # This path variables values
+             {
+              corpusFile: './src/data/input/incremental_corpus/incremental_bbc_corpus.txt',
+              keywordsFile: './src/data/input/incremental_keywords/incremental_bbc_keywords.txt',
+              modelSavePath: './src/data/tmp/local_embeds',
+              groundTruthFile: './src/data/input/ground_truth/bbc_ground_truth.txt',
+              enhanceTxonomyFile: './src/data/output/enhanced_taxonomy.json'
+              }
+dblp:                                   # This is name of the dataset
+        pathvariable:                   # This path variables values
+             {
+              corpusFile: './src/data/input/incremental_corpus/incremental_dblp_corpus.txt',
+              keywordsFile: './src/data/input/incremental_keywords/incremental_dblp_keywords.txt',
+              modelSavePath: './src/data/tmp/local_embeds',
+              groundTruthFile: './src/data/input/ground_truth/dblp_ground_truth.txt',
+              enhanceTxonomyFile: './src/data/output/enhanced_taxonomy.json'
+              }
+

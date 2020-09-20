@@ -1,0 +1,98 @@
+#---------------------------------------------------------------------
+#   Name:config.yml
+#   Description: This is an YAML file specifically designed 
+#                to implement the automatic way of providing
+#                parameters to different algorithms at runtime
+#                and other configurations.
+#   Created By: Mili Biswas (Dept.of Informatics, UNIFR, Switzerland)
+#   Creation Date: 19-Mar-2020
+#   Version : 1.0
+#---------------------------------------------------------------------
+
+amazon_fashion:                        # This is name of the dataset
+        clusterinfo:                   # This is clustering number of each node in taxonomy hierarchy
+             {
+              node0: 3,
+                node01: 5,
+                  node011: 0,
+                  node012: 0,
+                  node013: 0,
+                  node014: 0,
+                  node015: 0,
+                node02: 5,
+                  node021: 0,
+                  node022: 0,
+                  node023: 0,
+                  node024: 0,
+                  node025: 0,
+                node03: 5,
+                  node031: 0, 
+                  node032: 0,
+                  node033: 0,
+                  node034: 0,
+                  node035: 0
+              }
+        otherparam:            # This is other parameters, maxlevel is maximum level or depth in hierarchy
+                               # other values are sampling size that algorithms will use
+             {
+                maxlevel: 3,
+                sample: 1e-4,
+                window: 5,
+                min_count: 5,
+                iter: 20,
+                size: 60, 
+                groundTruthFileName: amazon_fashion_ground_truth.txt                
+              }
+bbc:                                   # This is name of the dataset
+        clusterinfo:                   # This is clustering number of each node in taxonomy hierarchy
+             {
+              node0: 2,
+                node01: 2,
+                  node011: 0,
+                  node012: 0,
+                node02: 2,
+                  node021: 0,
+                  node022: 0
+              }
+        otherparam:            # This is other parameters, maxlevel is maximum level or depth in hierarchy
+                               # other values are sampling size that algorithms will use
+             {
+                maxlevel: 3,
+                sample: 1e-4,
+                window: 5,
+                min_count: 5,
+                iter: 20,
+                size: 60,
+                groundTruthFileName: bbc_ground_truth.txt
+              }
+dblp:                        # This is name of the dataset
+        clusterinfo:         # This is clustering number of each node in taxonomy hierarchy
+             {
+              node0: 2,
+                node01: 3,
+                  node011: 0,
+                  node012: 0,
+                  node013: 0,
+                node02: 3,
+                  node021: 0,
+                  node022: 0,
+                  node023: 0
+              }
+        otherparam:            # This is other parameters, maxlevel is maximum level or depth in hierarchy
+                               # other values are sampling size that algorithms will use
+             {
+                maxlevel: 3,
+                sample: 1e-3,
+                window: 5,
+                min_count: 5,
+                iter: 20,
+                size: 60,
+                groundTruthFileName: dblp_ground_truth.txt
+              }
+pathvariable:           # This path variables values
+             {
+              tmpFilePath: './src/data/tmp/', 
+              modelSavePath: './src/data/tmp/local_embeds',
+              groundTruthPath: './src/data/input/ground_truth',
+              hypertreeJsonFile: './src/data/output/hypertree/Visualisation/json_data.js'
+              }

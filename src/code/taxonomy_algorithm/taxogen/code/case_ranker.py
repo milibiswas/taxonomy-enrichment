@@ -32,37 +32,34 @@ def read_caseolap_result(case_file):
 
 
 def rank_phrase(case_file):
-
-	ph_dist_map = {}
-	smoothing_factor = 0.0
-
-	phrase_map, cell_map, cell_cnt = read_caseolap_result(case_file)
-
-	unif = [1.0 / cell_cnt] * cell_cnt
-
-	for ph in phrase_map:
-		ph_vec = [x[1] for x in phrase_map[ph].items()]   # Modified by MILI
-		if len(ph_vec) < cell_cnt:
-			ph_vec += [0] * (cell_cnt - len(ph_vec))
+    ph_dist_map = {}
+    smoothing_factor = 0.0
+    phrase_map, cell_map, cell_cnt = read_caseolap_result(case_file)
+    unif = [1.0 / cell_cnt] * cell_cnt
+    
+    for ph in phrase_map:
+        ph_vec = [x[1] for x in phrase_map[ph].items()]   # Modified by MILI
+        if len(ph_vec) < cell_cnt:
+            ph_vec += [0] * (cell_cnt - len(ph_vec))
 		# smoothing
-		ph_vec = [x + smoothing_factor for x in ph_vec]
-		ph_vec = utils.l1_normalize(ph_vec)
-		ph_dist_map[ph] = utils.kl_divergence(ph_vec, unif)
-
-	ranked_list = sorted(ph_dist_map.items(), key=operator.itemgetter(1), reverse=True)
-	
-	return ranked_list
+        ph_vec = [x + smoothing_factor for x in ph_vec]
+        ph_vec = utils.l1_normalize(ph_vec)
+        ph_dist_map[ph] = utils.kl_divergence(ph_vec, unif)
+        
+    ranked_list = sorted(ph_dist_map.items(), key=operator.itemgetter(1), reverse=True)
+    
+    return ranked_list
 
 
 def write_keywords(o_file, ranked_list, thres):
-	with open(o_file, 'w+') as g:
-		for ph in ranked_list:
-			if ph[1] > thres:
-				g.write('%s\n' % (ph[0]))
-	tmp_file = o_file + '-score.txt'
-	with open(tmp_file, 'w+') as g:
-		for ph in ranked_list:
-			g.write('%s\t%f\n' % (ph[0], ph[1]))
+    with open(o_file, 'w+') as g:
+        for ph in ranked_list:
+            if ph[1] > thres:
+                g.write('%s\n' % (ph[0]))
+    tmp_file = o_file + '-score.txt'
+    with open(tmp_file, 'w+') as g:
+        for ph in ranked_list:
+            g.write('%s\t%f\n' % (ph[0], ph[1]))
 
 def main_rank_phrase(input_f, output_f, thres):
   ranked_list = rank_phrase(input_f)
