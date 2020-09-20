@@ -80,6 +80,7 @@ def main(param1,param2,param3):
         min_count=config[param1]['otherparam']['min_count']
         iter=config[param1]['otherparam']['iter']
         size=config[param1]['otherparam']['size']
+        param3=param3*0.2   #This is for calibrating the data volume (100% means 20% of actual data)
         data=dc.Data(param1,param3,groundTruth)
         data.prepare()
         
