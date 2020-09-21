@@ -13,7 +13,7 @@ ___
 
 - Install all the dependent packages and modules using the setup script located in the root folder:
 ```
-    $ python setup.py
+    $ python3 setup.py
 ```
 
 ___
@@ -23,7 +23,7 @@ ___
 - For full run taxonomy algorithms, trigger the run python script from root folder as below
 
 ```
-    $ python run.py [arguments]
+    $ python3 run.py [arguments]
 ```
 
 - Command-line arguments for the program:
@@ -39,7 +39,7 @@ ___
 - For taxonomy enhancement run, trigger the run_enhance python script from root folder as below
 
 ```
-    $ python run_enhance.py [arguments]
+    $ python3 run_enhance.py [arguments]
 ```
 
 - Command-line arguments for the program:
@@ -81,6 +81,12 @@ ___
     taxogen_noac : Taxogen with no adaptive clustering
     hclus        : Hierarchical Clustering
     ncrp         : Taxonomy building based on chinese resturant process
+```
+## Notes:
+```
+    The enhance taxonomy algorithm requires the trained model and existing taxonomy. Both are saved by taxonomy generating algorithm (e.g. Taxogen, Taxogen NoLE etc.).
+    Therefore, it is imporatant to run the taxonomy generating algorithm first for respective data and then run the enhance taxonomy algorithm for the same data to get
+    the relevant result.
 ```
 ## Reference:
 @inproceedings{rehurek_lrec,
