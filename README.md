@@ -45,7 +45,7 @@ ___
 - Command-line arguments for the program:
 
  |-d (Dataset) |  -n (Data Volume percent to be used)
- | -------- | -------- | -------- |
+ | -------- | -------- |
  | amazon_fashion  | (0,100] |
  | bbc             |  |
  | dblp            |  |
@@ -96,7 +96,7 @@ ___
       address = {Valletta, Malta},
       language={English}
 }
-
+<br/>
 @article{DBLP:journals/corr/abs-1812-09551,
   author    = {Chao Zhang and
                Fangbo Tao and
@@ -118,7 +118,7 @@ ___
   biburl    = {https://dblp.org/rec/journals/corr/abs-1812-09551.bib},
   bibsource = {dblp computer science bibliography, https://dblp.org}
 }
-
+<br/>
 @inproceedings{DBLP:conf/kdd/MaCW018,
   author={Jianxin Ma and Peng Cui and Xiao Wang and Wenwu Zhu},
   title={Hierarchical Taxonomy Aware Network Embedding},
@@ -129,7 +129,8 @@ ___
   booktitle={KDD},
   crossref={conf/kdd/2018}
 }
+<br/>
 
-Amazon Fashion Review Dataset: https://snap.stanford.edu/data/web-Amazon.html
-BBC News Article Dataset: http://mlg.ucd.ie/files/datasets/bbc-fulltext.zip
+Amazon Fashion Review Dataset: https://snap.stanford.edu/data/web-Amazon.html <br/>
+BBC News Article Dataset: http://mlg.ucd.ie/files/datasets/bbc-fulltext.zip <br/>
 DBLP Citation Network Dataset: https://dblp.uni-trier.de/xml/
