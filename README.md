@@ -56,7 +56,7 @@ ___
 - Run enriching taxonomy algorithm on a dataset (amazon_fashion) using 10% of total data volume
 
 ```
-    $ python run_enhance.py -d 'amazon_fashion' -n 10
+    $ python3 run_enhance.py -d 'amazon_fashion' -n 10
 
 ```
 
