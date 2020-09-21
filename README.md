@@ -20,7 +20,7 @@ ___
 
 ## Execution
 
-- For execution, trigger the run python script from root folder
+- For full run taxonomy algorithms, trigger the run python script from root folder as below
 
 ```
     $ python run.py [arguments]
@@ -28,7 +28,7 @@ ___
 
 - Command-line arguments for the program:
 
- | -a (Algorithm) | -d (Dataset) |  -n (Data Volume ratio to be used)
+ | -a (Algorithm) | -d (Dataset) |  -n (Data Volume percent to be used)
  | -------- | -------- | -------- |
  | taxogen    | amazon_fashion  | (0,100] |
  | ncrp       | bbc             |  |
@@ -36,14 +36,27 @@ ___
  | taxogen_noac       |      |  |
  | hclus       |                 |  |
 
+- For taxonomy enhancement run, trigger the run_enhance python script from root folder as below
 
+```
+    $ python run_enhance.py [arguments]
+```
+
+- Command-line arguments for the program:
+
+ |-d (Dataset) |  -n (Data Volume percent to be used)
+ | -------- | -------- | -------- |
+ | amazon_fashion  | (0,100] |
+ | bbc             |  |
+ | dblp            |  |
+ 
 
 ### Execution examples
 
-- Run algorithm (taxogen) on a dataset (amazon_fashion) using 10% of total data volume
+- Run enriching taxonomy algorithm on a dataset (amazon_fashion) using 10% of total data volume
 
 ```
-    $ python run.py -d 'amazon_fashion' -a "taxogen" -n 10
+    $ python run_enhance.py -d 'amazon_fashion' -n 10
 
 ```
 
@@ -83,3 +96,40 @@ ___
       address = {Valletta, Malta},
       language={English}
 }
+
+@article{DBLP:journals/corr/abs-1812-09551,
+  author    = {Chao Zhang and
+               Fangbo Tao and
+               Xiusi Chen and
+               Jiaming Shen and
+               Meng Jiang and
+               Brian M. Sadler and
+               Michelle Vanni and
+               Jiawei Han},
+  title     = {TaxoGen: Unsupervised Topic Taxonomy Construction by Adaptive Term
+               Embedding and Clustering},
+  journal   = {CoRR},
+  volume    = {abs/1812.09551},
+  year      = {2018},
+  url       = {http://arxiv.org/abs/1812.09551},
+  archivePrefix = {arXiv},
+  eprint    = {1812.09551},
+  timestamp = {Fri, 15 Feb 2019 12:58:25 +0100},
+  biburl    = {https://dblp.org/rec/journals/corr/abs-1812-09551.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings{DBLP:conf/kdd/MaCW018,
+  author={Jianxin Ma and Peng Cui and Xiao Wang and Wenwu Zhu},
+  title={Hierarchical Taxonomy Aware Network Embedding},
+  year={2018},
+  cdate={1514764800000},
+  pages={1920-1929},
+  url={https://doi.org/10.1145/3219819.3220062},
+  booktitle={KDD},
+  crossref={conf/kdd/2018}
+}
+
+Amazon Fashion Review Dataset: https://snap.stanford.edu/data/web-Amazon.html
+BBC News Article Dataset: http://mlg.ucd.ie/files/datasets/bbc-fulltext.zip
+DBLP Citation Network Dataset: https://dblp.uni-trier.de/xml/
