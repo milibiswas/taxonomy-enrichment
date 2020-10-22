@@ -466,7 +466,7 @@ class Data(object):
                zipObj.extractall(EXTRACT_DATA_DIR)
                bbcData = load_files(EXTRACT_DATA_DIR+'/bbc/', encoding="utf-8", decode_error="replace")
                
-               with open(self.inputFile,'w',,encoding='utf8') as fin:
+               with open(self.inputFile,'w',encoding='utf8') as fin:
                    for review in bbcData['data']:
                        tmp=''
                        lines = review.split("\n")
